@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>埼玉県日高市のリサイクル率はなぜ99.8%なのか？「R」と「R'」の差から見える実態 | 日本ごみ処理ダッシュボード</title>
+    <meta
+      name="description"
+      content="埼玉県日高市の令和6年度リサイクル率は99.8%と全国トップクラス。しかし、より厳格な指標「リサイクル率R'」で見ると14.6%と埼玉県平均を下回ります。環境省データからその理由を読み解きます。"
+    />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hidaka-recycling-rate-99.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="埼玉県日高市のリサイクル率はなぜ99.8%なのか？「R」と「R'」の差から見える実態" />
+    <meta
+      property="og:description"
+      content="日高市のリサイクル率99.8%の裏にある「R」と「R'」の違いを、環境省の公開データから読み解きます。"
+    />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hidaka-recycling-rate-99.html" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ponsllc" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "埼玉県日高市のリサイクル率はなぜ99.8%なのか？「R」と「R'」の差から見える実態",
+        "description": "埼玉県日高市の令和6年度リサイクル率は99.8%と全国トップクラス。しかし、より厳格な指標「リサイクル率R'」で見ると14.6%と埼玉県平均を下回る。環境省データからその理由を読み解く。",
+        "datePublished": "2026-09-16",
+        "dateModified": "2026-09-16",
+        "author": { "@type": "Organization", "name": "pons-llc" },
+        "publisher": { "@type": "Organization", "name": "pons-llc" },
+        "image": "https://trash-bi.pons-llc.com/ogp.png",
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hidaka-recycling-rate-99.html"
+      }
+    </script>
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
+        --color-accent-orange: #c74700;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--color-primary);
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--color-text-muted);
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 25px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 40px 0 14px;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 10px;
+      }
+      p {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      p strong {
+        color: var(--color-text);
+      }
+      .lead {
+        font-size: 16px;
+        color: var(--color-text);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .stat-box {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+      .stat-box .num.muted {
+        color: var(--color-accent-orange);
+      }
+      .stat-box .label {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+      caption {
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 6px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 6px;
+        text-align: right;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .callout {
+        background: var(--color-primary-surface);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--color-text);
+      }
+      .callout strong {
+        color: var(--color-primary);
+      }
+
+      .cta-band {
+        background: var(--color-bg);
+        border-radius: 12px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 48px 0 0;
+      }
+      .cta-band p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .cta-band .cta-btn {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 28px;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        color: var(--color-text-muted);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <article>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 日高市のリサイクル率99.8%を読み解く</p>
+      <span class="kicker">データ深掘り</span>
+      <h1>埼玉県日高市のリサイクル率はなぜ99.8%なのか？<br />「R」と「R'」の差から見える実態</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
+
+      <p class="lead">
+        <a href="/app/">日本ごみ処理ダッシュボード</a>のランキングで市区町村別リサイクル率を「降順」で見ると、全国トップは埼玉県日高市の<strong>99.8%</strong>（令和6年度）。全国平均が19.3%であることを考えると、驚異的な数字に見えます。しかし、環境省が公表するもう一つの指標「リサイクル率R'」で見ると、日高市はわずか<strong>14.6%</strong>。埼玉県平均（24.0%）さえ下回ります。この大きな差はどこから生まれるのでしょうか。
+      </p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num">99.8%</div>
+          <div class="label">リサイクル率 R（令和6年度）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num muted">14.6%</div>
+          <div class="label">リサイクル率 R'（令和6年度）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">0.25%</div>
+          <div class="label">総排出量に占める最終処分量の割合</div>
+        </div>
+      </div>
+
+      <h2>「R」と「R'」、2つのリサイクル率とは</h2>
+      <p>
+        環境省の統計では、リサイクル率を2種類の計算式で公表しています。「R」は<strong>直接資源化量＋中間処理後再生利用量＋集団回収量</strong>を分子とする、広い意味でのリサイクル率です。一方「R'」は、この中間処理後再生利用量から<strong>固形燃料化、焼却灰・飛灰のセメント原料化、セメント等への直接投入、飛灰の山元還元</strong>といった手法を除外して計算します。
+      </p>
+      <p>
+        簡単に言うと、R'は「焼却灰をセメントの原料にする」といった、狭義には資源循環と呼びにくい手法を差し引いた、より厳格な指標です。この2つの数字の差が大きい自治体ほど、リサイクル率の内訳の多くを「灰のセメント原料化」などが占めている、と読み取ることができます。
+      </p>
+
+      <h2>日高市の内訳から見えること</h2>
+      <p>
+        日高市の令和元〜6年度のデータを見ると、リサイクル率Rは毎年99.7〜99.8%とほぼ一定です。一方でR'は14.6〜16.2%の範囲で推移しており、大きな差が続いています。
+      </p>
+
+      <table>
+        <caption>
+          日高市 リサイクル率R・R'の推移（環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>年度</th>
+            <th>リサイクル率 R</th>
+            <th>リサイクル率 R'</th>
+            <th>最終処分量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>R1</td>
+            <td>99.7%</td>
+            <td>15.9%</td>
+            <td>50t</td>
+          </tr>
+          <tr>
+            <td>R2</td>
+            <td>99.7%</td>
+            <td>16.2%</td>
+            <td>47t</td>
+          </tr>
+          <tr>
+            <td>R3</td>
+            <td>99.7%</td>
+            <td>14.7%</td>
+            <td>47t</td>
+          </tr>
+          <tr>
+            <td>R4</td>
+            <td>99.7%</td>
+            <td>15.3%</td>
+            <td>43t</td>
+          </tr>
+          <tr>
+            <td>R5</td>
+            <td>99.7%</td>
+            <td>15.1%</td>
+            <td>41t</td>
+          </tr>
+          <tr>
+            <td>R6</td>
+            <td>99.8%</td>
+            <td>14.6%</td>
+            <td>40t</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        この一貫したパターンから、日高市のリサイクル率Rが高いのは一時的な特殊要因ではなく、<strong>焼却灰のセメント原料化など、R'では除外される手法を主体とした資源化の仕組み</strong>を継続的に運用していることがうかがえます。
+      </p>
+
+      <div class="callout">
+        <strong>本当にすごいのはここ。</strong>
+        一方で、日高市の総排出量（令和6年度：約16,248t）に対して最終処分量（埋立処分）はわずか40t、割合にして<strong>0.25%</strong>しかありません。焼却以外の中間処理や直接資源化を含めた「減量処理率」は6年連続で<strong>100.0%</strong>。つまり、ごみのほぼ全量が焼却・資源化のいずれかで処理され、埋立処分に回るごみが極めて少ないという点は、数字の作り方によらない、純粋に優れた実績と言えます。
+      </div>
+
+      <h2>この事例から学べること</h2>
+      <p>
+        「リサイクル率」という一つの数字だけを見ると、自治体間の取り組みを単純に比較したくなります。しかし日高市の例が示すように、<strong>同じ「リサイクル率」という言葉でも、何を分子に含めるかで数字は大きく変わります</strong>。ある自治体の高いリサイクル率が、住民の分別協力による資源ごみの多さによるものなのか、焼却灰の処理方法によるものなのかは、R とR'
+        を見比べることで初めて見えてきます。
+      </p>
+      <p>
+        本サイトのダッシュボードでは、市区町村ごとに「リサイクル率（R）」に加えて内訳データも確認できます。気になる自治体があれば、ぜひR'や最終処分率も合わせてチェックしてみてください。
+      </p>
+
+      <div class="cta-band">
+        <p>日高市や他の自治体のデータを、地図・ランキング・推移グラフで詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/">ダッシュボードで確認する →</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/articles/">読み物一覧</a> ・ <a href="/terms.html">利用規約</a> ・
+          <a href="/privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

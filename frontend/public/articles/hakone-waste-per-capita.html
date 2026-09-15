@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
+    <meta
+      name="description"
+      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
+    />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita.html" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
+    <meta
+      property="og:description"
+      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
+    />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita.html" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ponsllc" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
+        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "datePublished": "2026-09-16",
+        "dateModified": "2026-09-16",
+        "author": { "@type": "Organization", "name": "pons-llc" },
+        "publisher": { "@type": "Organization", "name": "pons-llc" },
+        "image": "https://trash-bi.pons-llc.com/ogp.png",
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita.html"
+      }
+    </script>
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --color-accent-orange: #c74700;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--color-primary);
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--color-text-muted);
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 25px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 40px 0 14px;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 10px;
+      }
+      p {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      p strong {
+        color: var(--color-text);
+      }
+      .lead {
+        font-size: 16px;
+        color: var(--color-text);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .stat-box {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+      .stat-box .num.muted {
+        color: var(--color-accent-orange);
+      }
+      .stat-box .label {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+      caption {
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 6px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 6px;
+        text-align: right;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .callout {
+        background: var(--color-primary-surface);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--color-text);
+      }
+      .callout strong {
+        color: var(--color-primary);
+      }
+      .caveat {
+        border: 1px dashed var(--color-border);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 24px 0;
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .cta-band {
+        background: var(--color-bg);
+        border-radius: 12px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 48px 0 0;
+      }
+      .cta-band p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .cta-band .cta-btn {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 28px;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        color: var(--color-text-muted);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <article>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <span class="kicker">データ深掘り</span>
+      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+
+      <p class="lead">
+        <a href="/app/">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
+      </p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num muted">3,432g</div>
+          <div class="label">箱根町の1人1日排出量（R6）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">866g</div>
+          <div class="label">全国平均（R6）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">753g</div>
+          <div class="label">神奈川県平均（R6）</div>
+        </div>
+      </div>
+
+      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <p>
+        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
+      </p>
+      <p>
+        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+      </p>
+
+      <table>
+        <caption>
+          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>自治体</th>
+            <th>人口</th>
+            <th>1人1日排出量</th>
+            <th>事業系/生活系 比率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>箱根町（神奈川・温泉/観光地）</td>
+            <td>10,815人</td>
+            <td>3,432g</td>
+            <td>約3.10倍</td>
+          </tr>
+          <tr>
+            <td>草津町（群馬・温泉地）</td>
+            <td>6,041人</td>
+            <td>2,180g</td>
+            <td>約2.07倍</td>
+          </tr>
+          <tr>
+            <td>山中湖村（山梨・観光地）</td>
+            <td>5,816人</td>
+            <td>2,181g</td>
+            <td>約2.20倍</td>
+          </tr>
+          <tr>
+            <td>全国市区町村平均</td>
+            <td>—</td>
+            <td>866g</td>
+            <td>約0.39倍</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
+      </p>
+
+      <h2>「1人1日排出量」の分母が抱える弱点</h2>
+      <p>
+        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
+      </p>
+      <p>
+        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+      </p>
+
+      <div class="callout">
+        <strong>言い換えると</strong>
+        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+      </div>
+
+      <div class="caveat">
+        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+      </div>
+
+      <h2>この事例から学べること</h2>
+      <p>
+        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+      </p>
+      <p>
+        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+      </p>
+
+      <div class="cta-band">
+        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/">ダッシュボードで確認する →</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/articles/">読み物一覧</a> ・ <a href="/terms.html">利用規約</a> ・
+          <a href="/privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

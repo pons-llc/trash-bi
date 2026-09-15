@@ -380,6 +380,47 @@
         padding: 5px 14px;
       }
 
+      /* 読み物 */
+      .article-list {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .article-card {
+        display: block;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 20px 22px;
+        text-decoration: none;
+        color: inherit;
+        transition: border-color 0.15s;
+      }
+      .article-card:hover {
+        border-color: var(--color-primary);
+      }
+      .article-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 3px 12px;
+        margin-bottom: 8px;
+      }
+      .article-card h3 {
+        font-size: 15px;
+        margin: 0 0 8px;
+        color: var(--color-text);
+      }
+      .article-card p {
+        font-size: 13px;
+        color: var(--color-text-sub);
+        margin: 0;
+      }
+
       /* FAQ */
       .faq-list {
         max-width: 720px;
@@ -589,6 +630,26 @@
       </div>
     </section>
 
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">読み物：データを深掘りする</h2>
+        <p class="section-lead">環境省データから見えてくる、自治体ごとのごみ処理の意外な実態を掘り下げます</p>
+        <div class="article-list">
+          <a class="article-card" href="/articles/hidaka-recycling-rate-99.html">
+            <span class="article-tag">データ深掘り</span>
+            <h3>埼玉県日高市のリサイクル率はなぜ99.8%なのか？「R」と「R'」の差から見える実態</h3>
+            <p>全国トップクラスのリサイクル率99.8%の裏にある、2つの指標の違いを読み解きます。</p>
+          </a>
+          <a class="article-card" href="/articles/hakone-waste-per-capita.html">
+            <span class="article-tag">データ深掘り</span>
+            <h3>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題</h3>
+            <p>人口1万人の町のごみ排出量が全国平均の4倍になる理由を読み解きます。</p>
+          </a>
+        </div>
+        <p class="stat-note"><a href="/articles/" style="color: var(--color-primary)">読み物をもっと見る →</a></p>
+      </div>
+    </section>
+
     <section class="alt">
       <div class="wrap">
         <h2 class="section-title">よくある質問</h2>
@@ -632,6 +693,7 @@
         <span>© 2026 pons-llc</span>
         <div class="footer-links">
           <a href="/app/">ダッシュボード</a>
+          <a href="/articles/">読み物</a>
           <a href="https://github.com/pons-llc/trash-bi" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="/terms.html">利用規約</a>
           <a href="/privacy.html">プライバシーポリシー</a>

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>読み物：ごみ処理データを深掘りする | 日本ごみ処理ダッシュボード</title>
+    <meta
+      name="description"
+      content="環境省の公開データから見えてくる、自治体ごとのごみ処理の意外な実態を深掘りする記事一覧。リサイクル率の高い自治体のからくり、観光地のごみ排出量が多い理由などを解説します。"
+    />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="読み物：ごみ処理データを深掘りする" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.8;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        white-space: nowrap;
+      }
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 24px;
+        margin: 0 0 10px;
+      }
+      p.lead {
+        font-size: 14.5px;
+        color: var(--color-text-sub);
+        max-width: 560px;
+        margin: 0 0 36px;
+      }
+      .article-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .article-card {
+        display: block;
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        padding: 22px 24px;
+        transition: border-color 0.15s;
+      }
+      .article-card:hover {
+        border-color: var(--color-primary);
+      }
+      .article-card .tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 3px 12px;
+        margin-bottom: 10px;
+      }
+      .article-card h2 {
+        font-size: 16.5px;
+        margin: 0 0 8px;
+        color: var(--color-text);
+      }
+      .article-card p {
+        font-size: 13.5px;
+        color: var(--color-text-sub);
+        margin: 0;
+      }
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <main>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ 読み物</p>
+      <h1>読み物：ごみ処理データを深掘りする</h1>
+      <p class="lead">
+        環境省の公開データを見ていると、単純なランキングだけでは分からない「なぜ？」に出会うことがあります。そうした数字の裏側を、データにもとづいて掘り下げていく連載です。
+      </p>
+
+      <div class="article-list">
+        <a class="article-card" href="/articles/hidaka-recycling-rate-99.html">
+          <span class="tag">データ深掘り</span>
+          <h2>埼玉県日高市のリサイクル率はなぜ99.8%なのか？「R」と「R'」の差から見える実態</h2>
+          <p>
+            全国トップクラスのリサイクル率99.8%を誇る日高市。しかし、より厳格な指標「R'」では14.6%と埼玉県平均を下回ります。2つの指標の違いから見える本当の実態とは。
+          </p>
+        </a>
+        <a class="article-card" href="/articles/hakone-waste-per-capita.html">
+          <span class="tag">データ深掘り</span>
+          <h2>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題</h2>
+          <p>
+            人口1万人の箱根町のごみ排出量は全国平均の約4倍。事業系ごみの比率から、観光地特有の統計のからくりを読み解きます。
+          </p>
+        </a>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/app/">ダッシュボード</a> ・ <a href="/terms.html">利用規約</a> ・
+          <a href="/privacy.html">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
