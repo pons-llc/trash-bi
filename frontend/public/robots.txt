@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trash-bi.pons-llc.com/sitemap.xml

@@ -2,6 +2,16 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,22 +20,24 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>日本ごみ処理ダッシュボード | 自治体別ごみ処理データの可視化ツール</title>
+    <title>日本ごみ処理ダッシュボード｜都道府県・市区町村別のごみ排出量・リサイクル率を無料で比較【環境省データ】</title>
     <meta
       name="description"
-      content="環境省「一般廃棄物処理実態調査」の公開データをもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料の可視化ダッシュボード。オープンソース（MIT License）。"
+      content="環境省の公式統計をもとに、全国1,700以上の自治体のごみ排出量・リサイクル率・処理コストを地図とランキングで比較できる無料ツール。SDGs・循環型社会に関心がある方、自治体の環境政策担当者、議会視察先を探している方にもおすすめ。登録不要、オープンソース。"
     />
     <link rel="canonical" href="https://trash-bi.pons-llc.com/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="日本ごみ処理ダッシュボード | 自治体別ごみ処理データの可視化ツール" />
+    <meta property="og:title" content="日本ごみ処理ダッシュボード｜都道府県・市区町村別のごみ排出量・リサイクル率を無料で比較" />
     <meta
       property="og:description"
-      content="環境省の公開データをもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料ダッシュボード。"
+      content="環境省の公式統計をもとに、全国1,700以上の自治体のごみ排出量・リサイクル率・処理コストを地図とランキングで比較できる無料ツール。"
     />
     <meta property="og:url" content="https://trash-bi.pons-llc.com/" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:image:width" content="1895" />
+    <meta property="og:image:height" content="879" />
     <meta property="og:locale" content="ja_JP" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -33,9 +45,86 @@
     <meta name="twitter:title" content="日本ごみ処理ダッシュボード" />
     <meta
       name="twitter:description"
-      content="環境省の公開データをもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料ダッシュボード。"
+      content="環境省の公式統計をもとに、全国1,700以上の自治体のごみ排出量・リサイクル率・処理コストを地図とランキングで比較できる無料ツール。"
     />
     <meta name="twitter:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "name": "日本ごみ処理ダッシュボード",
+            "url": "https://trash-bi.pons-llc.com/",
+            "description": "環境省の公式統計をもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理コストを地図とランキングで比較できる無料ダッシュボード。",
+            "inLanguage": "ja",
+            "publisher": { "@id": "https://trash-bi.pons-llc.com/#org" }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://trash-bi.pons-llc.com/#org",
+            "name": "pons-llc",
+            "url": "https://trash-bi.pons-llc.com/",
+            "sameAs": ["https://x.com/ponsllc", "https://github.com/pons-llc/trash-bi"]
+          },
+          {
+            "@type": "WebApplication",
+            "name": "日本ごみ処理ダッシュボード",
+            "url": "https://trash-bi.pons-llc.com/app/",
+            "applicationCategory": "DataVisualizationApplication",
+            "operatingSystem": "Web",
+            "isAccessibleForFree": true,
+            "description": "都道府県・市区町村別のごみ排出量・リサイクル率・処理原価を地図とランキングで可視化するツール。"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "このデータの出典は何ですか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "環境省が毎年公表している「一般廃棄物処理事業実態調査」の市区町村別公開データです。処理コストは同調査の廃棄物事業経費データをもとに算出しています。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "対象期間はいつからいつまでですか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "令和元年度（2019年度）から令和6年度（2024年度）までの6年分と、全期間の合計に対応しています。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "リサイクル率が高い自治体ほど優れていると言えますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "一概には言えません。人口密度、産業構成、資源化施設の整備状況などの条件が自治体ごとに異なるためです。地域差に気づくきっかけとしてご活用ください。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "無料で使えますか？会員登録は必要ですか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "完全無料・登録不要です。ブラウザからすぐにご利用いただけます。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "議会視察や行政視察の視察先探しに使えますか？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "はい。リサイクル率や処理コストなどの指標で全国ランキングを表示できるため、先進的な取り組みを行っている自治体を視察先候補として探す用途にもご活用いただけます。"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
 
     <style>
       :root {
@@ -47,6 +136,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
       * {
@@ -103,16 +193,27 @@
         padding: 56px 0 40px;
         text-align: center;
       }
+      .hero .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: #fff;
+        border: 1px solid var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 5px 16px;
+        margin-bottom: 16px;
+      }
       .hero h1 {
-        font-size: 30px;
-        line-height: 1.5;
+        font-size: 28px;
+        line-height: 1.55;
         margin: 0 0 16px;
         color: var(--color-text);
       }
       .hero p.lead {
         font-size: 15px;
         color: var(--color-text-sub);
-        max-width: 620px;
+        max-width: 640px;
         margin: 0 auto 28px;
       }
       .hero .cta-btn.primary {
@@ -144,10 +245,68 @@
       section.alt {
         background: var(--color-bg);
       }
+      section.narrative {
+        background: #fff;
+      }
       h2.section-title {
         font-size: 22px;
         text-align: center;
-        margin: 0 0 36px;
+        margin: 0 0 12px;
+      }
+      p.section-lead {
+        text-align: center;
+        font-size: 13.5px;
+        color: var(--color-text-muted);
+        max-width: 560px;
+        margin: 0 auto 36px;
+      }
+
+      /* 数字で見る */
+      .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+      }
+      .stat-card {
+        background: #fff;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 22px 18px;
+        text-align: center;
+      }
+      .stat-card .num {
+        font-size: 26px;
+        font-weight: 700;
+        color: var(--color-primary);
+        line-height: 1.3;
+      }
+      .stat-card .num.green {
+        color: var(--color-accent-green);
+      }
+      .stat-card .label {
+        font-size: 12.5px;
+        color: var(--color-text-sub);
+        margin-top: 6px;
+      }
+      .stat-note {
+        text-align: center;
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 20px;
+      }
+
+      /* なぜこのデータが大切か */
+      .narrative-body {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .narrative-body p {
+        font-size: 14.5px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      .narrative-body strong {
+        color: var(--color-text);
       }
 
       .feature-grid {
@@ -179,6 +338,8 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 16px;
+        padding: 0;
+        margin: 0;
       }
       .usecase-list li {
         list-style: none;
@@ -194,10 +355,6 @@
         color: var(--color-text);
         font-size: 14.5px;
         margin-bottom: 4px;
-      }
-      .usecase-list {
-        padding: 0;
-        margin: 0;
       }
 
       .about-data p {
@@ -221,6 +378,32 @@
         background: var(--color-primary-surface);
         border-radius: 999px;
         padding: 5px 14px;
+      }
+
+      /* FAQ */
+      .faq-list {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .faq-item {
+        border-bottom: 1px solid var(--color-border);
+        padding: 18px 0;
+      }
+      .faq-item h3 {
+        font-size: 14.5px;
+        margin: 0 0 8px;
+        display: flex;
+        gap: 8px;
+      }
+      .faq-item h3 .q-mark {
+        color: var(--color-primary);
+        font-weight: 700;
+      }
+      .faq-item p {
+        font-size: 13.5px;
+        color: var(--color-text-sub);
+        margin: 0;
+        padding-left: 22px;
       }
 
       .cta-band {
@@ -260,7 +443,7 @@
 
       @media (max-width: 520px) {
         .hero h1 {
-          font-size: 24px;
+          font-size: 22px;
         }
       }
     </style>
@@ -275,16 +458,67 @@
 
     <section class="hero">
       <div class="wrap">
+        <span class="eyebrow">環境省データ準拠・SDGs 12「つくる責任 つかう責任」</span>
         <h1>
-          全国の「ごみ」を、<br />都道府県・市区町村別に見える化する。
+          あなたの街のごみは、<br />ちゃんとリサイクルされていますか？
         </h1>
         <p class="lead">
-          環境省「一般廃棄物処理実態調査」の公開データをもとに、ごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料のダッシュボードです。令和元〜6年度のデータに対応。登録不要・すぐに使えます。
+          環境省「一般廃棄物処理事業実態調査」の公式データをもとに、全国約1,700の市区町村・47都道府県のごみ排出量・リサイクル率・処理コストを地図とランキングで見える化。循環型社会やゼロウェイストに関心がある方はもちろん、自治体の政策担当者や議会視察先を探している方にも役立つ無料ツールです。
         </p>
         <a class="cta-btn primary" href="/app/">ダッシュボードを見る →</a>
         <div class="hero-shot">
-          <img src="/ogp.png" alt="日本ごみ処理ダッシュボードの画面キャプチャ。地図・ランキング・推移グラフが表示されている。" loading="lazy" />
+          <img
+            src="/ogp.png"
+            width="1895"
+            height="879"
+            alt="日本ごみ処理ダッシュボードの画面キャプチャ。都道府県別のごみ排出量ヒートマップ地図、リサイクル率ランキング、自治体別の推移グラフが表示されている。"
+            loading="lazy"
+          />
         </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2 class="section-title">数字で見る日本のごみ</h2>
+        <p class="section-lead">環境省データ（令和6年度実績）をもとに集計</p>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="num">約3,811万t</div>
+            <div class="label">全国のごみ総排出量（令和6年度）</div>
+          </div>
+          <div class="stat-card">
+            <div class="num green">▲10.8%</div>
+            <div class="label">令和元年度からの5年間での減少率</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">19.3%</div>
+            <div class="label">全国平均リサイクル率</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">31.8%<span style="font-size: 13px; color: var(--color-text-muted);"> / 11.8%</span></div>
+            <div class="label">リサイクル率 最高（岡山県）/ 最低（和歌山県）</div>
+          </div>
+        </div>
+        <p class="stat-note">
+          最新の詳細データ・都道府県別／市区町村別の内訳は<a href="/app/" style="color: var(--color-primary)">ダッシュボード</a>でご確認いただけます。
+        </p>
+      </div>
+    </section>
+
+    <section class="narrative">
+      <div class="wrap narrative-body">
+        <h2 class="section-title">なぜ、ごみ処理データを見るべきなのか</h2>
+        <p>
+          日本は年間およそ3,800万トンものごみを排出しています。ごみの焼却は温室効果ガスの排出につながり、最終処分場（埋立地）の残余容量にも限りがあります。SDGs目標12「つくる責任
+          つかう責任」が掲げるとおり、ごみを減らし資源として循環させる社会への転換は、気候変動対策と資源の持続可能性の両面から避けて通れない課題です。
+        </p>
+        <p>
+          一方で、ごみ処理の取り組みには<strong>大きな地域差</strong>があります。リサイクル率が30%を超える自治体がある一方、10%台前半にとどまる自治体も存在します。この差がどこから生まれるのか——分別ルールの細かさ、資源化施設への投資、住民の意識、処理にかかるコストなど、要因はさまざまです。
+        </p>
+        <p>
+          本サイトは、環境省が公表する一次データをもとに、この「自治体ごとの違い」を誰でも直感的に見える形にすることを目指して作りました。自分の住む地域や、視察・研究対象の自治体の現状を知ることが、より良い選択と行動につながると考えています。
+        </p>
       </div>
     </section>
 
@@ -320,8 +554,16 @@
       <div class="wrap">
         <h2 class="section-title">こんな方におすすめ</h2>
         <ul class="usecase-list">
-          <li><strong>自治体・行政の担当者</strong>他自治体のごみ処理量やリサイクル率、処理コストとの比較検討に。</li>
-          <li><strong>研究者・学生</strong>廃棄物政策や地域比較の研究の一次分析ツールとして。</li>
+          <li>
+            <strong>環境問題・SDGsに関心のある方</strong
+            >循環型社会やゼロウェイストについて、自分の住む地域の実態から考えたい方に。
+          </li>
+          <li><strong>自治体・行政の環境政策担当者</strong>他自治体のごみ処理量やリサイクル率、処理コストとの比較検討に。</li>
+          <li>
+            <strong>議会・行政の視察担当者</strong
+            >リサイクル率やコスト効率で上位の自治体を一覧でき、視察先候補の選定に活用できます。
+          </li>
+          <li><strong>研究者・学生</strong>廃棄物政策や地域比較の研究における一次分析ツールとして。</li>
           <li><strong>記者・ライター</strong>地域のごみ問題を取材する際のデータ裏付けに。</li>
           <li><strong>一般の方</strong>自分の住む地域のごみ処理状況を他地域と比べてみたい方に。</li>
         </ul>
@@ -343,6 +585,34 @@
           <span class="badge">オープンソース（MIT License）</span>
           <span class="badge">登録不要・無料</span>
           <span class="badge">完全静的サイト</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2 class="section-title">よくある質問</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3><span class="q-mark">Q.</span>このデータの出典は何ですか？</h3>
+            <p>環境省が毎年公表している「一般廃棄物処理事業実態調査」の市区町村別公開データです。処理コストは同調査の廃棄物事業経費データをもとに算出しています。</p>
+          </div>
+          <div class="faq-item">
+            <h3><span class="q-mark">Q.</span>対象期間はいつからいつまでですか？</h3>
+            <p>令和元年度（2019年度）から令和6年度（2024年度）までの6年分と、全期間の合計に対応しています。</p>
+          </div>
+          <div class="faq-item">
+            <h3><span class="q-mark">Q.</span>リサイクル率が高い自治体ほど優れていると言えますか？</h3>
+            <p>一概には言えません。人口密度、産業構成、資源化施設の整備状況などの条件が自治体ごとに異なるためです。地域差に気づくきっかけとしてご活用ください。</p>
+          </div>
+          <div class="faq-item">
+            <h3><span class="q-mark">Q.</span>無料で使えますか？会員登録は必要ですか？</h3>
+            <p>完全無料・登録不要です。ブラウザからすぐにご利用いただけます。</p>
+          </div>
+          <div class="faq-item">
+            <h3><span class="q-mark">Q.</span>議会視察や行政視察の視察先探しに使えますか？</h3>
+            <p>はい。リサイクル率や処理コストなどの指標で全国ランキングを表示できるため、先進的な取り組みを行っている自治体を視察先候補として探す用途にもご活用いただけます。</p>
+          </div>
         </div>
       </div>
     </section>
