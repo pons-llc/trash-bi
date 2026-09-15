@@ -10,19 +10,19 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>日本ごみ処理ダッシュボード</title>
+    <title>日本ごみ処理ダッシュボード | 自治体別ごみ処理データの可視化ツール</title>
     <meta
       name="description"
-      content="環境省「一般廃棄物処理実態調査」データをもとにした、都道府県・市区町村別のごみ処理量・リサイクル率・処理原価の可視化ダッシュボード。"
+      content="環境省「一般廃棄物処理実態調査」の公開データをもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料の可視化ダッシュボード。オープンソース（MIT License）。"
     />
     <link rel="canonical" href="https://trash-bi.pons-llc.com/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="日本ごみ処理ダッシュボード | 自治体別ごみ処理データの可視化ツール" />
     <meta
       property="og:description"
-      content="環境省「一般廃棄物処理実態調査」データをもとにした、都道府県・市区町村別のごみ処理量・リサイクル率・処理原価の可視化ダッシュボード。"
+      content="環境省の公開データをもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料ダッシュボード。"
     />
     <meta property="og:url" content="https://trash-bi.pons-llc.com/" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
@@ -33,12 +33,341 @@
     <meta name="twitter:title" content="日本ごみ処理ダッシュボード" />
     <meta
       name="twitter:description"
-      content="環境省「一般廃棄物処理実態調査」データをもとにした、都道府県・市区町村別のごみ処理量・リサイクル率・処理原価の可視化ダッシュボード。"
+      content="環境省の公開データをもとに、全国の都道府県・市区町村のごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料ダッシュボード。"
     />
     <meta name="twitter:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-strong: #00118f;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 14px;
+        padding: 10px 22px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .cta-btn:hover {
+        background: var(--color-primary-surface);
+      }
+
+      .hero {
+        background: linear-gradient(180deg, var(--color-primary-surface) 0%, #fff 100%);
+        padding: 56px 0 40px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 30px;
+        line-height: 1.5;
+        margin: 0 0 16px;
+        color: var(--color-text);
+      }
+      .hero p.lead {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        max-width: 620px;
+        margin: 0 auto 28px;
+      }
+      .hero .cta-btn.primary {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 16px;
+        padding: 14px 36px;
+      }
+      .hero .cta-btn.primary:hover {
+        background: var(--color-primary-strong);
+      }
+      .hero-shot {
+        margin: 40px auto 0;
+        max-width: 900px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 23, 193, 0.18);
+        border: 1px solid var(--color-border);
+      }
+      .hero-shot img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+      section.alt {
+        background: var(--color-bg);
+      }
+      h2.section-title {
+        font-size: 22px;
+        text-align: center;
+        margin: 0 0 36px;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+      .feature-card {
+        background: #fff;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 22px;
+      }
+      .feature-card .icon {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+      .feature-card h3 {
+        font-size: 15px;
+        margin: 0 0 8px;
+      }
+      .feature-card p {
+        font-size: 13px;
+        color: var(--color-text-sub);
+        margin: 0;
+      }
+
+      .usecase-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+      .usecase-list li {
+        list-style: none;
+        background: #fff;
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 18px 20px;
+        font-size: 13.5px;
+        color: var(--color-text-sub);
+      }
+      .usecase-list li strong {
+        display: block;
+        color: var(--color-text);
+        font-size: 14.5px;
+        margin-bottom: 4px;
+      }
+      .usecase-list {
+        padding: 0;
+        margin: 0;
+      }
+
+      .about-data p {
+        font-size: 14px;
+        color: var(--color-text-sub);
+      }
+      .about-data ul {
+        font-size: 14px;
+        color: var(--color-text-sub);
+        padding-left: 20px;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .badge {
+        font-size: 12px;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 5px 14px;
+      }
+
+      .cta-band {
+        text-align: center;
+        padding: 56px 0;
+      }
+      .cta-band h2 {
+        font-size: 22px;
+        margin: 0 0 12px;
+      }
+      .cta-band p {
+        font-size: 14px;
+        color: var(--color-text-sub);
+        margin: 0 0 24px;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 28px 0;
+      }
+      footer.site-footer .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 16px;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        text-decoration: underline;
+      }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 16px;
+      }
+
+      @media (max-width: 520px) {
+        .hero h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <div class="wrap">
+        <span class="logo">日本ごみ処理ダッシュボード</span>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <h1>
+          全国の「ごみ」を、<br />都道府県・市区町村別に見える化する。
+        </h1>
+        <p class="lead">
+          環境省「一般廃棄物処理実態調査」の公開データをもとに、ごみ排出量・リサイクル率・処理原価を地図とランキングで比較できる無料のダッシュボードです。令和元〜6年度のデータに対応。登録不要・すぐに使えます。
+        </p>
+        <a class="cta-btn primary" href="/app/">ダッシュボードを見る →</a>
+        <div class="hero-shot">
+          <img src="/ogp.png" alt="日本ごみ処理ダッシュボードの画面キャプチャ。地図・ランキング・推移グラフが表示されている。" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">主な機能</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="icon">🗾</div>
+            <h3>地図で可視化</h3>
+            <p>都道府県別のコロプレス地図と、市区町村別のバブルマップを切り替え。1人1日あたりのごみ排出量や処理原価を色分け表示します。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📊</div>
+            <h3>ランキングで比較</h3>
+            <p>リサイクル率・総排出量・最終処分率・処理原価など、指標を切り替えて全国順位を一覧できます。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">📈</div>
+            <h3>経年推移を追う</h3>
+            <p>気になる自治体をクリックすると、令和元〜6年度の排出量・リサイクル率の推移がグラフで確認できます。</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">💰</div>
+            <h3>処理コストも分析</h3>
+            <p>都道府県別のごみ処理事業費から算出した「処理原価（円/t）」で、コスト効率の地域差も比較できます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <h2 class="section-title">こんな方におすすめ</h2>
+        <ul class="usecase-list">
+          <li><strong>自治体・行政の担当者</strong>他自治体のごみ処理量やリサイクル率、処理コストとの比較検討に。</li>
+          <li><strong>研究者・学生</strong>廃棄物政策や地域比較の研究の一次分析ツールとして。</li>
+          <li><strong>記者・ライター</strong>地域のごみ問題を取材する際のデータ裏付けに。</li>
+          <li><strong>一般の方</strong>自分の住む地域のごみ処理状況を他地域と比べてみたい方に。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-data">
+      <div class="wrap">
+        <h2 class="section-title">データについて</h2>
+        <p>
+          本サイトのデータは、環境省が毎年公表している「一般廃棄物処理事業実態調査」の市区町村別公開データを加工・集計したものです。対象は令和元年度〜令和6年度（全国約1,700市区町村・47都道府県）。処理原価は同調査の「廃棄物事業経費」データより算出しています。
+        </p>
+        <ul>
+          <li>出典：環境省 一般廃棄物処理事業実態調査</li>
+          <li>対象期間：令和元年度（R1）〜令和6年度（R6）、および全期間合計</li>
+          <li>地図の行政界：国土地理院ベクトルタイル（実験公開）</li>
+        </ul>
+        <div class="badges">
+          <span class="badge">オープンソース（MIT License）</span>
+          <span class="badge">登録不要・無料</span>
+          <span class="badge">完全静的サイト</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>今すぐ試してみる</h2>
+        <p>登録不要。ブラウザですぐに全国のごみ処理データを比較できます。</p>
+        <a class="cta-btn primary" style="background: var(--color-primary); color: #fff;" href="/app/"
+          >ダッシュボードを開く →</a
+        >
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div class="footer-links">
+          <a href="/app/">ダッシュボード</a>
+          <a href="https://github.com/pons-llc/trash-bi" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/terms.html">利用規約</a>
+          <a href="/privacy.html">プライバシーポリシー</a>
+          <a href="https://x.com/ponsllc" target="_blank" rel="noopener noreferrer">お問い合わせ (X: @ponsllc)</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

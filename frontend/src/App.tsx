@@ -205,6 +205,7 @@ export default function App() {
           <span>データ出典: 環境省一般廃棄物処理実態調査</span>
         </div>
         <div className="app-footer-group">
+          <a href="/">トップページ</a>
           <a href="/terms.html">利用規約</a>
           <a href="/privacy.html">プライバシーポリシー</a>
           <a href="https://x.com/ponsllc" target="_blank" rel="noopener noreferrer">
