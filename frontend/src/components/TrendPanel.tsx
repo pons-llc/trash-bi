@@ -1,11 +1,13 @@
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import type { TrendResponse } from '../api'
 import { getMetric } from '../metrics'
+import ShareButtons from './ShareButtons'
 
 interface Props {
   data: TrendResponse | null
   loading: boolean
   onClose: () => void
+  shareInfo: { text: string; url: string } | null
 }
 
 const YEAR_LABEL: Record<string, string> = {
@@ -27,7 +29,7 @@ function yenPerTonTick(v: number) {
   return `${Math.round(v / 1000)}千円`
 }
 
-export default function TrendPanel({ data, loading, onClose }: Props) {
+export default function TrendPanel({ data, loading, onClose, shareInfo }: Props) {
   if (!data && !loading) return null
 
   return (
@@ -39,6 +41,7 @@ export default function TrendPanel({ data, loading, onClose }: Props) {
         </button>
       </div>
       {loading && <div className="ranking-empty">読み込み中…</div>}
+      {data && shareInfo && <ShareButtons text={shareInfo.text} url={shareInfo.url} />}
       {data && (
         <div className="trend-charts">
           <div className="trend-chart-block">

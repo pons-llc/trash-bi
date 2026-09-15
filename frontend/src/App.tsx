@@ -28,12 +28,30 @@ interface Selected {
   name: string
 }
 
+// シェアリンク（?level=city&code=13100&year=R6 など）で開いたときに、共有元と
+// 同じ表示（都道府県絞り込み・自治体・推移パネル）を再現するための初期状態。
+// 読み込みは初回マウント時の1回だけ（URLを継続的に同期はしていない）。
+function readShareParams() {
+  if (typeof window === 'undefined') return { year: null, level: null, code: null }
+  const params = new URLSearchParams(window.location.search)
+  const level = params.get('level')
+  return {
+    year: params.get('year'),
+    level: level === 'pref' || level === 'city' ? (level as Level) : null,
+    code: params.get('code'),
+  }
+}
+
 export default function App() {
   const [meta, setMeta] = useState<Meta | null>(null)
-  const [year, setYear] = useState('R6')
+  const shareParams = useMemo(readShareParams, [])
+  const [year, setYear] = useState(shareParams.year || 'R6')
   const [category, setCategory] = useState<Category>('total')
-  const [level, setLevel] = useState<Level>('pref')
-  const [prefFilter, setPrefFilter] = useState<string | null>(null)
+  const [level, setLevel] = useState<Level>(shareParams.level ?? 'pref')
+  const [prefFilter, setPrefFilter] = useState<string | null>(() => {
+    if (!shareParams.code) return null
+    return shareParams.level === 'city' ? shareParams.code.slice(0, 2) : shareParams.code
+  })
   const [mapMetric, setMapMetric] = useState<MapMetric>('per_capita')
 
   // 年度ごとの静的JSONをまるごと保持する。区分選択・都道府県絞り込み・
@@ -48,7 +66,9 @@ export default function App() {
   const [rankingMetric, setRankingMetric] = useState('recycling_rate_r_pct')
   const [rankingOrder, setRankingOrder] = useState<'asc' | 'desc'>('desc')
 
-  const [selected, setSelected] = useState<Selected | null>(null)
+  const [selected, setSelected] = useState<Selected | null>(() =>
+    shareParams.level && shareParams.code ? { level: shareParams.level, code: shareParams.code, name: '' } : null,
+  )
   const [trendData, setTrendData] = useState<TrendResponse | null>(null)
   const [trendLoading, setTrendLoading] = useState(false)
 
@@ -117,6 +137,18 @@ export default function App() {
     })
   }, [level, prefDataRaw, cityDataRaw, rankingMetric, rankingOrder, prefFilter, rankingMetricValid])
   const rankingLoading = level === 'pref' ? prefLoading : cityLoading
+
+  const shareInfo = useMemo(() => {
+    if (!selected || !trendData || trendData.series.length === 0) return null
+    const latest = trendData.series[trendData.series.length - 1]
+    const rate = latest.recycling_rate_r_pct
+    const text =
+      rate !== null && rate !== undefined
+        ? `${trendData.name}のリサイクル率は${rate.toFixed(1)}%（${latest.fiscal_year}年度）`
+        : `${trendData.name}のごみ処理データ`
+    const url = `https://trash-bi.pons-llc.com/app/?level=${selected.level}&code=${encodeURIComponent(selected.code)}&year=${year}`
+    return { text, url }
+  }, [selected, trendData, year])
 
   function handleSelectPref(code: string, name: string) {
     setSelected({ level: 'pref', code, name })
@@ -195,7 +227,7 @@ export default function App() {
             onSelect={handleRankingSelect}
             selectedCode={selected?.code}
           />
-          <TrendPanel data={trendData} loading={trendLoading} onClose={() => setSelected(null)} />
+          <TrendPanel data={trendData} loading={trendLoading} onClose={() => setSelected(null)} shareInfo={shareInfo} />
         </aside>
       </main>
 

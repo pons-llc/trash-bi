@@ -248,6 +248,48 @@
         padding: 11px 28px;
       }
 
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 32px;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
       footer.site-footer {
         border-top: 1px solid var(--color-border);
         padding: 24px 0;
@@ -282,6 +324,32 @@
       <span class="kicker">データ深掘り</span>
       <h1>埼玉県日高市のリサイクル率はなぜ99.8%なのか？<br />「R」と「R'」の差から見える実態</h1>
       <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
+
+      <div class="share-widget">
+        <span class="share-label">シェア</span>
+        <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+        <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+        <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+      <script>
+        ;(function () {
+          var shareText = '埼玉県日高市のリサイクル率は99.8%。でも「R\'」で見ると14.6%――環境省データで読み解く'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hidaka-recycling-rate-99.html'
+          document.getElementById('share-x').href =
+            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+          document.getElementById('share-line').href =
+            'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+          document.getElementById('share-copy').addEventListener('click', function () {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              var btn = document.getElementById('share-copy')
+              btn.textContent = 'コピーしました'
+              setTimeout(function () {
+                btn.textContent = 'リンクをコピー'
+              }, 2000)
+            })
+          })
+        })()
+      </script>
 
       <p class="lead">
         <a href="/app/">日本ごみ処理ダッシュボード</a>のランキングで市区町村別リサイクル率を「降順」で見ると、全国トップは埼玉県日高市の<strong>99.8%</strong>（令和6年度）。全国平均が19.3%であることを考えると、驚異的な数字に見えます。しかし、環境省が公表するもう一つの指標「リサイクル率R'」で見ると、日高市はわずか<strong>14.6%</strong>。埼玉県平均（24.0%）さえ下回ります。この大きな差はどこから生まれるのでしょうか。

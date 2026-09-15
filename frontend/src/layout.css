@@ -40,6 +40,21 @@
   gap: 6px;
 }
 
+/* スマホ幅では5つのフィルターが縦に積み上がって画面の大半を占めてしまう
+   ため、折り返しをやめて横スクロールの1行に収める。 */
+@media (max-width: 640px) {
+  .control-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    padding: 10px 16px;
+  }
+  .control-group {
+    flex-shrink: 0;
+  }
+}
+
 .control-label {
   font-size: 11px;
   font-weight: 500;
@@ -359,6 +374,56 @@
   margin: 2px 0 0;
   font-size: 11px;
   color: var(--color-text-muted);
+}
+
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.share-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-right: 2px;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text-sub);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.share-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.share-x {
+  font-weight: 700;
+}
+
+.share-line {
+  color: #06c755;
+  border-color: #06c75533;
+}
+
+.share-line:hover {
+  border-color: #06c755;
+  color: #06c755;
 }
 
 .close-btn {

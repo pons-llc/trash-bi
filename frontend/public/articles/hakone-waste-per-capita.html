@@ -255,6 +255,48 @@
         padding: 11px 28px;
       }
 
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 32px;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
       footer.site-footer {
         border-top: 1px solid var(--color-border);
         padding: 24px 0;
@@ -289,6 +331,32 @@
       <span class="kicker">データ深掘り</span>
       <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
       <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+
+      <div class="share-widget">
+        <span class="share-label">シェア</span>
+        <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+        <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+        <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+      <script>
+        ;(function () {
+          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita.html'
+          document.getElementById('share-x').href =
+            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+          document.getElementById('share-line').href =
+            'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+          document.getElementById('share-copy').addEventListener('click', function () {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              var btn = document.getElementById('share-copy')
+              btn.textContent = 'コピーしました'
+              setTimeout(function () {
+                btn.textContent = 'リンクをコピー'
+              }, 2000)
+            })
+          })
+        })()
+      </script>
 
       <p class="lead">
         <a href="/app/">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。

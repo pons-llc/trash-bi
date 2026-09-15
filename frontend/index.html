@@ -461,6 +461,47 @@
         margin: 0 0 24px;
       }
 
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
       footer.site-footer {
         border-top: 1px solid var(--color-border);
         padding: 28px 0;
@@ -685,6 +726,31 @@
         <a class="cta-btn primary" style="background: var(--color-primary); color: #fff;" href="/app/"
           >ダッシュボードを開く →</a
         >
+        <div class="share-widget" style="justify-content: center; margin-top: 24px;">
+          <span class="share-label">このサイトをシェア</span>
+          <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+          <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+          <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+        </div>
+        <script>
+          ;(function () {
+            var shareText = '全国の自治体別ごみ排出量・リサイクル率・処理コストを地図とランキングで比較できる無料ツール「日本ごみ処理ダッシュボード」'
+            var shareUrl = 'https://trash-bi.pons-llc.com/'
+            document.getElementById('share-x').href =
+              'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+            document.getElementById('share-line').href =
+              'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+            document.getElementById('share-copy').addEventListener('click', function () {
+              navigator.clipboard.writeText(shareUrl).then(function () {
+                var btn = document.getElementById('share-copy')
+                btn.textContent = 'コピーしました'
+                setTimeout(function () {
+                  btn.textContent = 'リンクをコピー'
+                }, 2000)
+              })
+            })
+          })()
+        </script>
       </div>
     </section>
 
