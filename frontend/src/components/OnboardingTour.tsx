@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 export type TourStage = 'hidden' | 'welcome' | 'running'
 
@@ -58,9 +58,12 @@ interface Rect {
 }
 
 const PADDING = 8
+const VIEWPORT_MARGIN = 16
 
 export default function OnboardingTour({ stage, step, onStepChange, onStart, onSkip, onClose }: Props) {
   const [rect, setRect] = useState<Rect | null>(null)
+  const tooltipRef = useRef<HTMLDivElement>(null)
+  const [tooltipPos, setTooltipPos] = useState<{ top: number; left: number } | null>(null)
 
   useEffect(() => {
     if (stage !== 'running') return
@@ -85,6 +88,40 @@ export default function OnboardingTour({ stage, step, onStepChange, onStart, onS
     window.addEventListener('resize', measure)
     return () => window.removeEventListener('resize', measure)
   }, [stage, step])
+
+  // 実際のツールチップのサイズを測ってから、ビューポート内に収まる位置を
+  // 計算する。useLayoutEffectなのでペイント前に確定し、古い位置がちらつく
+  // ことはない。これをしないと、ハイライト対象が画面上部に近い小さい
+  // ウィンドウなどで、ツールチップが画面外にはみ出してしまう。
+  useLayoutEffect(() => {
+    if (stage !== 'running') return
+    const el = tooltipRef.current
+    if (!el) return
+    const w = el.offsetWidth
+    const h = el.offsetHeight
+
+    if (!rect) {
+      // ハイライト対象が見つからないときは画面中央に表示する。
+      setTooltipPos({
+        top: Math.max(VIEWPORT_MARGIN, (window.innerHeight - h) / 2),
+        left: Math.max(VIEWPORT_MARGIN, (window.innerWidth - w) / 2),
+      })
+      return
+    }
+
+    const gap = 12
+    let top = rect.top + rect.height + PADDING + gap // まずは対象の下に置く
+    if (top + h > window.innerHeight - VIEWPORT_MARGIN) {
+      const above = rect.top - PADDING - gap - h // 入らなければ上に置く
+      if (above >= VIEWPORT_MARGIN) top = above
+    }
+    // 上下どちらにも収まらない場合でも、最終的に必ずビューポート内に
+    // クランプする（対象と多少重なっても、画面外に消えるよりまし）。
+    top = Math.max(VIEWPORT_MARGIN, Math.min(top, window.innerHeight - h - VIEWPORT_MARGIN))
+    const left = Math.max(VIEWPORT_MARGIN, Math.min(rect.left, window.innerWidth - w - VIEWPORT_MARGIN))
+
+    setTooltipPos({ top, left })
+  }, [rect, step, stage])
 
   if (stage === 'hidden') return null
 
@@ -112,14 +149,6 @@ export default function OnboardingTour({ stage, step, onStepChange, onStart, onS
   const current = STEPS[step]
   const isLast = step === STEPS.length - 1
 
-  // ツールチップの位置：ハイライト対象の下に十分な余白があれば下、なければ上に表示。
-  const tooltipTop = rect
-    ? rect.top + rect.height + 16 + PADDING < window.innerHeight - 160
-      ? rect.top + rect.height + PADDING + 12
-      : Math.max(16, rect.top - PADDING - 12)
-    : window.innerHeight / 2
-  const tooltipPlacement = rect && rect.top + rect.height + 16 + PADDING < window.innerHeight - 160 ? 'below' : 'above'
-
   return (
     <div className="tour-backdrop" onClick={onClose}>
       {rect && (
@@ -134,11 +163,12 @@ export default function OnboardingTour({ stage, step, onStepChange, onStart, onS
         />
       )}
       <div
-        className={`tour-tooltip tour-tooltip-${tooltipPlacement}`}
+        ref={tooltipRef}
+        className="tour-tooltip"
         style={{
-          top: tooltipPlacement === 'above' ? undefined : tooltipTop,
-          bottom: tooltipPlacement === 'above' ? window.innerHeight - tooltipTop : undefined,
-          left: rect ? Math.min(Math.max(16, rect.left), window.innerWidth - 320) : undefined,
+          top: tooltipPos?.top ?? 0,
+          left: tooltipPos?.left ?? 0,
+          visibility: tooltipPos ? 'visible' : 'hidden',
         }}
         onClick={(e) => e.stopPropagation()}
       >
