@@ -87,9 +87,10 @@ export default function App() {
   }, [])
 
   // 初回訪問（localStorageにフラグがない）の場合だけ、ツアー開始の案内を出す。
-  // シェアリンクで特定の自治体を開いた場合はツアーで邪魔をしないようにする。
+  // 記事からの深掘りリンクもlevel/codeパラメータを使うため、パラメータの
+  // 有無ではなく初回訪問かどうかだけで判定する（スキップは1クリックで可能）。
   useEffect(() => {
-    if (!meta || shareParams.code) return
+    if (!meta) return
     try {
       if (!window.localStorage.getItem(TOUR_SEEN_KEY)) {
         setTourStage('welcome')
