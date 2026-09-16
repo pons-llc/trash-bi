@@ -40,7 +40,7 @@ export default function RankingPanel({
   const maxAbs = Math.max(1, ...items.map((it) => Math.abs(it.value)))
 
   return (
-    <div className="panel ranking-panel">
+    <div className="panel ranking-panel" data-tour="ranking">
       <div className="panel-header">
         <h2>ランキング</h2>
         <div className="ranking-controls">

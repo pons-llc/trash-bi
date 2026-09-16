@@ -50,6 +50,16 @@ export const METRICS: MetricDef[] = [
     format: formatPercent,
   },
   {
+    key: 'recycling_rate_r2_pct',
+    label: "リサイクル率（R'・厳格指標）",
+    shortLabel: "リサイクル率(R')",
+    unit: '%',
+    betterDirection: 'desc',
+    // R' は市区町村単位のみ公表されており、都道府県別の値は存在しない。
+    levels: ['city'],
+    format: formatPercent,
+  },
+  {
     key: 'per_capita_total_g',
     label: '1人1日あたりごみ排出量（合計）',
     shortLabel: '1人1日排出量',
@@ -62,6 +72,15 @@ export const METRICS: MetricDef[] = [
     key: 'per_capita_household_g',
     label: '1人1日あたりごみ排出量（生活系）',
     shortLabel: '1人1日排出量（生活系）',
+    unit: 'g/人日',
+    betterDirection: 'asc',
+    levels: ['pref', 'city'],
+    format: formatGramsPerDay,
+  },
+  {
+    key: 'per_capita_business_g',
+    label: '1人1日あたりごみ排出量（事業系）',
+    shortLabel: '1人1日排出量（事業系）',
     unit: 'g/人日',
     betterDirection: 'asc',
     levels: ['pref', 'city'],

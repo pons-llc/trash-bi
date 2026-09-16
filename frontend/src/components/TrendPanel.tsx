@@ -94,7 +94,7 @@ export default function TrendPanel({ data, loading, onClose, shareInfo }: Props)
           </div>
 
           <div className="trend-chart-block">
-            <h3>{getMetric('recycling_rate_r_pct').label}</h3>
+            <h3>リサイクル率（R{data.level === 'city' ? " / R'" : ''}）</h3>
             <ResponsiveContainer width="100%" height={160}>
               <LineChart data={data.series} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
@@ -113,19 +113,45 @@ export default function TrendPanel({ data, loading, onClose, shareInfo }: Props)
                   width={40}
                 />
                 <Tooltip
-                  formatter={(value) => [`${Number(value).toFixed(1)}%`, 'リサイクル率']}
+                  formatter={(value, name) => [
+                    `${Number(value).toFixed(1)}%`,
+                    name === 'recycling_rate_r2_pct' ? "リサイクル率(R')" : 'リサイクル率(R)',
+                  ]}
                   labelFormatter={(v) => `${YEAR_LABEL[String(v)] ?? v} 年度`}
                 />
+                {data.level === 'city' && (
+                  <Legend
+                    formatter={(value) => (value === 'recycling_rate_r2_pct' ? "R'" : 'R')}
+                    wrapperStyle={{ fontSize: 12 }}
+                  />
+                )}
                 <Line
                   type="monotone"
                   dataKey="recycling_rate_r_pct"
                   stroke="var(--series-total)"
                   strokeWidth={2}
                   dot={{ r: 3 }}
-                  name="リサイクル率"
+                  name="recycling_rate_r_pct"
                 />
+                {data.level === 'city' && (
+                  <Line
+                    type="monotone"
+                    dataKey="recycling_rate_r2_pct"
+                    stroke="var(--color-orange-600)"
+                    strokeWidth={2}
+                    strokeDasharray="4 3"
+                    dot={{ r: 3 }}
+                    name="recycling_rate_r2_pct"
+                  />
+                )}
               </LineChart>
             </ResponsiveContainer>
+            {data.level === 'city' && (
+              <p className="trend-note">
+                ※ R'は焼却灰のセメント原料化などを除いた厳格な指標。差が大きい理由は
+                <a href="/articles/hidaka-recycling-rate-99"> こちらの記事</a>で解説しています。
+              </p>
+            )}
           </div>
 
           {data.level === 'pref' && (

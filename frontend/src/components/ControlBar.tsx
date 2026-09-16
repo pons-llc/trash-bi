@@ -38,7 +38,7 @@ export default function ControlBar({
 }: Props) {
   return (
     <div className="control-bar">
-      <div className="control-group">
+      <div className="control-group" data-tour="year">
         <label className="control-label" htmlFor="year-select">
           対象年度
         </label>
@@ -51,7 +51,7 @@ export default function ControlBar({
         </select>
       </div>
 
-      <div className="control-group">
+      <div className="control-group" data-tour="category">
         <span className="control-label">区分</span>
         <div className="radio-group" role="radiogroup" aria-label="ごみの区分">
           {CATEGORY_OPTIONS.map((opt) => (
@@ -69,7 +69,7 @@ export default function ControlBar({
         </div>
       </div>
 
-      <div className="control-group">
+      <div className="control-group" data-tour="level">
         <span className="control-label">表示単位</span>
         <div className="toggle-group" role="group" aria-label="表示単位の切り替え">
           <button

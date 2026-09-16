@@ -13,14 +13,18 @@ import {
   type PrefStatRaw,
   type TrendResponse,
 } from './api'
+import ArticleSuggestion from './components/ArticleSuggestion'
 import ControlBar from './components/ControlBar'
 import JapanMap, { type MapMetric } from './components/JapanMap'
 import MapLegend from './components/MapLegend'
+import OnboardingTour, { type TourStage } from './components/OnboardingTour'
 import RankingPanel from './components/RankingPanel'
 import TrendPanel from './components/TrendPanel'
 import { applyCategory, getMetric, metricsForLevel } from './metrics'
 import { rankItems } from './rankings'
 import './layout.css'
+
+const TOUR_SEEN_KEY = 'trash-bi:onboarding-seen'
 
 interface Selected {
   level: Level
@@ -32,13 +36,16 @@ interface Selected {
 // 同じ表示（都道府県絞り込み・自治体・推移パネル）を再現するための初期状態。
 // 読み込みは初回マウント時の1回だけ（URLを継続的に同期はしていない）。
 function readShareParams() {
-  if (typeof window === 'undefined') return { year: null, level: null, code: null }
+  if (typeof window === 'undefined') return { year: null, level: null, code: null, metric: null, category: null }
   const params = new URLSearchParams(window.location.search)
   const level = params.get('level')
+  const category = params.get('category')
   return {
     year: params.get('year'),
     level: level === 'pref' || level === 'city' ? (level as Level) : null,
     code: params.get('code'),
+    metric: params.get('metric'),
+    category: category === 'total' || category === 'household' || category === 'business' ? (category as Category) : null,
   }
 }
 
@@ -46,7 +53,7 @@ export default function App() {
   const [meta, setMeta] = useState<Meta | null>(null)
   const shareParams = useMemo(readShareParams, [])
   const [year, setYear] = useState(shareParams.year || 'R6')
-  const [category, setCategory] = useState<Category>('total')
+  const [category, setCategory] = useState<Category>(shareParams.category ?? 'total')
   const [level, setLevel] = useState<Level>(shareParams.level ?? 'pref')
   const [prefFilter, setPrefFilter] = useState<string | null>(() => {
     if (!shareParams.code) return null
@@ -63,7 +70,7 @@ export default function App() {
   const [cityLoading, setCityLoading] = useState(false)
   const [mapBreaks, setMapBreaks] = useState<number[]>([])
 
-  const [rankingMetric, setRankingMetric] = useState('recycling_rate_r_pct')
+  const [rankingMetric, setRankingMetric] = useState(shareParams.metric || 'recycling_rate_r_pct')
   const [rankingOrder, setRankingOrder] = useState<'asc' | 'desc'>('desc')
 
   const [selected, setSelected] = useState<Selected | null>(() =>
@@ -72,9 +79,50 @@ export default function App() {
   const [trendData, setTrendData] = useState<TrendResponse | null>(null)
   const [trendLoading, setTrendLoading] = useState(false)
 
+  const [tourStage, setTourStage] = useState<TourStage>('hidden')
+  const [tourStep, setTourStep] = useState(0)
+
   useEffect(() => {
     fetchMeta().then(setMeta).catch(console.error)
   }, [])
+
+  // 初回訪問（localStorageにフラグがない）の場合だけ、ツアー開始の案内を出す。
+  // シェアリンクで特定の自治体を開いた場合はツアーで邪魔をしないようにする。
+  useEffect(() => {
+    if (!meta || shareParams.code) return
+    try {
+      if (!window.localStorage.getItem(TOUR_SEEN_KEY)) {
+        setTourStage('welcome')
+      }
+    } catch {
+      // localStorageが使えない環境（プライベートモード等）では単に案内をスキップする。
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [meta])
+
+  function markTourSeen() {
+    try {
+      window.localStorage.setItem(TOUR_SEEN_KEY, '1')
+    } catch {
+      // 保存できなくても動作に支障はないため無視する。
+    }
+  }
+
+  function handleTourStart() {
+    markTourSeen()
+    setTourStep(0)
+    setTourStage('running')
+  }
+
+  function handleTourSkip() {
+    markTourSeen()
+    setTourStage('hidden')
+  }
+
+  function handleTourRelaunch() {
+    setTourStep(0)
+    setTourStage('running')
+  }
 
   useEffect(() => {
     setPrefLoading(true)
@@ -169,10 +217,20 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="app-header">
-        <h1>日本ごみ処理ダッシュボード</h1>
-        <p className="app-subtitle">
-          環境省「一般廃棄物処理実態調査」市区町村別データ（令和元〜6年度）
-        </p>
+        <div className="app-header-row">
+          <div>
+            <h1>日本ごみ処理ダッシュボード</h1>
+            <p className="app-subtitle">
+              環境省「一般廃棄物処理実態調査」市区町村別データ（令和元〜6年度）
+            </p>
+          </div>
+          <div className="app-header-links">
+            <a href="/articles/">読み物</a>
+            <button type="button" className="header-guide-btn" onClick={handleTourRelaunch}>
+              使い方ガイド
+            </button>
+          </div>
+        </div>
       </header>
 
       {meta && (
@@ -194,7 +252,7 @@ export default function App() {
 
       <main className="app-main">
         <section className="map-section">
-          <div className="map-container">
+          <div className="map-container" data-tour="map">
             <JapanMap
               level={level}
               prefData={prefData}
@@ -228,6 +286,7 @@ export default function App() {
             selectedCode={selected?.code}
           />
           <TrendPanel data={trendData} loading={trendLoading} onClose={() => setSelected(null)} shareInfo={shareInfo} />
+          <ArticleSuggestion level={selected?.level ?? level} code={selected?.code ?? prefFilter} />
         </aside>
       </main>
 
@@ -245,6 +304,15 @@ export default function App() {
           </a>
         </div>
       </footer>
+
+      <OnboardingTour
+        stage={tourStage}
+        step={tourStep}
+        onStepChange={setTourStep}
+        onStart={handleTourStart}
+        onSkip={handleTourSkip}
+        onClose={() => setTourStage('hidden')}
+      />
     </div>
   )
 }
