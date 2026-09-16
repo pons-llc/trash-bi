@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>人口10万人の泉佐野市が「観光地型」のごみ排出パターンを持つ理由 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="大阪府泉佐野市は人口約10万人の都市でありながら、事業系ごみが生活系ごみの1.8〜2倍という観光地並みの比率を6年間安定して記録しています。箱根町・草津町のようにコロナ禍で大きく変動しなかった点から、関西国際空港という特殊な立地要因を検証します。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/izumisano-airport-waste" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="人口10万人の泉佐野市が「観光地型」のごみ排出パターンを持つ理由" />
+    <meta property="og:description" content="大阪府泉佐野市の事業系/生活系ごみ比率が6年間安定して高い理由を、箱根町・草津町との比較から検証する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/izumisano-airport-waste" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "人口10万人の泉佐野市が「観光地型」のごみ排出パターンを持つ理由",
+        "description": "大阪府泉佐野市の事業系ごみ比率が安定して高い背景を、観光地との比較データから検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/izumisano-airport-waste"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 泉佐野市のごみ排出パターン</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>人口10万人の泉佐野市が<br />「観光地型」のごみ排出パターンを持つ理由</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = '人口10万人の大阪府泉佐野市、事業系ごみの比率は観光地の箱根町並み。コロナ禍でもほぼ変わらなかった理由とは'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/izumisano-airport-waste'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,85 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead"><a href="/app/?level=city&code=27213&year=R6&category=business&metric=per_capita_business_g">日本ごみ処理ダッシュボード</a>で事業系/生活系ごみの比率が高い自治体を見ると、<a href="/articles/hakone-waste-per-capita">箱根町</a>や草津町のような小さな観光・温泉地が上位を占めます。その中に、人口約10万人という規模の大きな都市が1つ紛れ込んでいます。大阪府泉佐野市です。令和6年度の事業系/生活系比率は<strong>1.84倍</strong>。大阪市（1.42倍）を上回り、観光地の草津町（2.03倍）に迫る水準です。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num muted">1.8〜1.96倍</div>
+          <div class="label">泉佐野市 事業系/生活系比率（R1〜R6のレンジ）</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
-          <div class="label">全国平均（R6）</div>
+          <div class="num">99,194人</div>
+          <div class="label">泉佐野市の人口（R6）</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num">1.09〜1.42倍</div>
+          <div class="label">大阪市の同比率（R1〜R6のレンジ）</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>観光地と違い、コロナ禍でもほとんど揺れなかった</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
+        観光・温泉地の事業系ごみ比率は、観光需要の増減に敏感に反応します。箱根町は令和元年度の2.79倍からコロナ禍で2.24倍まで下がり、その後の観光回復とともに令和6年度には3.10倍まで上昇しました。草津町も1.98倍→1.48倍→2.03倍と同様の谷型の動きを見せています。
       </p>
       <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        一方、泉佐野市の比率は令和元年度1.81倍、コロナ禍の令和2年度も1.86倍と、ほとんど下がっていません。その後も1.94倍・1.96倍・1.95倍・1.84倍と、6年間を通じて1.8倍台からほぼ動かない安定した高さを保っています。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          事業系/生活系ごみ比率の推移比較（環境省データより）
         </caption>
         <thead>
           <tr>
-            <th>自治体</th>
-            <th>人口</th>
-            <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>年度</th>
+            <th>泉佐野市</th>
+            <th>大阪市</th>
+            <th>箱根町</th>
+            <th>草津町</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>R1</td><td>1.81</td><td>1.28</td><td>2.79</td><td>1.98</td></tr>
+          <tr><td>R2</td><td>1.86</td><td>1.09</td><td>2.24</td><td>1.48</td></tr>
+          <tr><td>R3</td><td>1.94</td><td>1.13</td><td>2.38</td><td>1.66</td></tr>
+          <tr><td>R4</td><td>1.96</td><td>1.25</td><td>2.65</td><td>1.93</td></tr>
+          <tr><td>R5</td><td>1.95</td><td>1.35</td><td>2.51</td><td>1.98</td></tr>
+          <tr><td>R6</td><td>1.84</td><td>1.42</td><td>3.10</td><td>2.03</td></tr>
         </tbody>
       </table>
 
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
+        観光需要が蒸発したコロナ禍でも下がらなかったという点は、泉佐野市の事業系ごみが、宿泊客や観光客の増減に左右されにくい別の要因によって発生していることを示唆しています。
       </p>
 
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
+      <h2>関西国際空港という特殊な立地</h2>
       <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
-      </p>
-      <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+        泉佐野市は、関西国際空港の連絡橋が接続する対岸の市であり、空港関連の物流施設・事業所が数多く立地しています。国際線の旅客需要はコロナ禍で大きく落ち込んだ一方、航空貨物や空港運営に関わる事業活動は、観光客の増減ほど大きくは変動しませんでした。空港関連の事業所から恒常的に発生する事業系ごみが、泉佐野市の比率を年間を通じて押し上げている一因である可能性があります。
       </p>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+        <strong>箱根町・草津町との違い</strong>
+        ：観光地の事業系ごみ比率は「観光客の増減」という変数に連動して大きく上下します。泉佐野市の比率が安定して高いことは、変動の少ない、より構造的な発生源（空港関連の事業活動など）が背景にある可能性を示しています。
       </div>
 
       <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+        本サイトが利用する環境省データには、事業所の業種別内訳や空港関連施設の廃棄物量は含まれていません。上記は事業系/生活系比率の安定性というパターンから導いた仮説であり、関西国際空港の存在を直接証明するものではない点にご留意ください。
       </div>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        事業系ごみの比率が高い自治体というと観光地を連想しがちですが、空港・港湾・工業団地といった特定のインフラを抱える都市でも、同様の現象が起こり得ます。コロナ禍のような外的ショックに対する反応の違いを見ることで、「観光由来」なのか「産業由来」なのかを見分けるヒントになります。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて年度別に比較できます。人口規模の割に事業系ごみが多い自治体があれば、その土地の産業構造を調べてみると新しい発見があるかもしれません。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>泉佐野市や近隣自治体のデータを、区分別・年度別に詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=city&code=27213&year=R6&category=business&metric=per_capita_business_g">ダッシュボードで確認する →</a>
       </div>
     </article>
 

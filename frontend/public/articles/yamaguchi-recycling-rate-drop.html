@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>山口県のリサイクル率はなぜ1年で10ポイント消えたのか | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="山口県のリサイクル率は令和3年度の32.5%から令和4年度に22.7%へ急落。県内のほぼ全市町で同時に同規模の下落が起きており、より厳格な指標R'も同様に下がっていました。環境省データで読み解く「1年で消えた」リサイクル率の謎。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/yamaguchi-recycling-rate-drop" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="山口県のリサイクル率はなぜ1年で10ポイント消えたのか" />
+    <meta property="og:description" content="山口県全体のリサイクル率が1年で10ポイント近く下落。ほぼ全市町で同時に起きたこの現象を環境省データで検証する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/yamaguchi-recycling-rate-drop" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "山口県のリサイクル率はなぜ1年で10ポイント消えたのか",
+        "description": "山口県のリサイクル率が令和3→4年度に急落した現象を、県内市町別のデータから検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/yamaguchi-recycling-rate-drop"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 山口県のリサイクル率急落の謎</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>山口県のリサイクル率はなぜ<br />1年で10ポイント消えたのか</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = '山口県のリサイクル率、1年で32.5%→22.7%に急落。しかも県内のほぼ全市町で同時に起きていた'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/yamaguchi-recycling-rate-drop'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,104 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead"><a href="/app/?level=pref&code=35&year=R4&metric=recycling_rate_r_pct">日本ごみ処理ダッシュボード</a>で都道府県別リサイクル率の推移グラフを見ていくと、山口県だけ不自然な折れ線を描いていることに気づきます。令和3年度まで30%台前半で安定していたリサイクル率が、令和4年度に<strong>22.7%</strong>まで一気に下落。1年間で<strong>約9.8ポイント</strong>も消えたことになります。一時的な誤差にしては大きすぎるこの変化、何が起きたのでしょうか。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num">32.5%</div>
+          <div class="label">山口県リサイクル率（R3）</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
-          <div class="label">全国平均（R6）</div>
+          <div class="num muted">22.7%</div>
+          <div class="label">山口県リサイクル率（R4、-9.8pt）</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num">21.5%</div>
+          <div class="label">山口県リサイクル率（R6、下落後も横ばい）</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>県内のほぼ全市町で、同じ年に同時多発</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
-      </p>
-      <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        この下落が「一部の自治体の特殊事情」でないことは、市町別データを見ると一目瞭然です。人口10万人を超える主要市を含め、県内のほぼすべての市町でリサイクル率が令和3→4年度にかけて同時に、しかも同規模で下落しています。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          山口県内 主要市のリサイクル率R（環境省データより）
         </caption>
         <thead>
           <tr>
-            <th>自治体</th>
-            <th>人口</th>
-            <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>市</th>
+            <th>R3</th>
+            <th>R4</th>
+            <th>下落幅</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>岩国市</td><td>39.5%</td><td>22.1%</td><td>-17.4pt</td></tr>
+          <tr><td>下関市</td><td>38.4%</td><td>21.6%</td><td>-16.8pt</td></tr>
+          <tr><td>宇部市</td><td>27.9%</td><td>11.2%</td><td>-16.8pt</td></tr>
+          <tr><td>山口市</td><td>33.6%</td><td>23.7%</td><td>-9.8pt</td></tr>
+          <tr><td>周南市</td><td>30.1%</td><td>21.3%</td><td>-8.9pt</td></tr>
         </tbody>
       </table>
 
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
+        しかも、この間の総排出量はほぼ横ばいです。例えば下関市の総排出量は93,190t（R3）→91,547t（R4）とわずかな減少にとどまり、リサイクル率の下落幅ほど大きくは動いていません。つまり「ごみが減ったからリサイクル率が下がった」わけではなく、<strong>資源化されたと計上される量そのものが急減した</strong>ことになります。
       </p>
 
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
+      <h2>厳格な指標「R'」でも同時に下落——定義の問題だけではない</h2>
       <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
+        本サイトの<a href="/articles/hidaka-recycling-rate-99">日高市の記事</a>で紹介したように、リサイクル率には「R」と、より厳格な「R'」（焼却灰のセメント原料化などを除外した指標）の2種類があります。R'も同時に大きく下落しているなら、これは単なる指標間の定義の違いではなく、資源化の実態そのものが変化した可能性が高くなります。
       </p>
+
+      <table>
+        <caption>
+          山口県内 主要市のリサイクル率R'（環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>市</th>
+            <th>R3</th>
+            <th>R4</th>
+            <th>下落幅</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>下関市</td><td>27.7%</td><td>11.0%</td><td>-16.7pt</td></tr>
+          <tr><td>宇部市</td><td>27.9%</td><td>9.8%</td><td>-18.1pt</td></tr>
+          <tr><td>岩国市</td><td>31.7%</td><td>13.8%</td><td>-17.9pt</td></tr>
+          <tr><td>周南市</td><td>25.4%</td><td>16.5%</td><td>-8.9pt</td></tr>
+        </tbody>
+      </table>
+
       <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+        RだけでなくR'も同じタイミングで、同じような幅で下落している——これは日高市のケースとは異なるパターンです。焼却灰の扱いといった計算方法の違いでは説明できず、県内の複数の自治体が共有していた資源化の仕組み（広域処理施設や資源化事業者への持ち込みなど）に、令和4年度前後で何らかの変化があった可能性を示唆しています。
       </p>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+        <strong>一方で、最終処分量は減り続けている</strong>
+        ：下関市を含む県内の最終処分量の合計は、令和3年度の24,360tから令和6年度には18,453tまで、一貫して減少しています。処理費用（1t当たりコスト）はこの間に46,789円→57,933円へ上昇しており、資源化量が減った分を焼却や別の処理でカバーしている可能性がうかがえます。
       </div>
 
       <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+        本サイトが利用する環境省データには、個別の資源化施設の稼働状況や、都道府県による報告方法の変更点までは含まれていません。上記は複数市町で共通して起きた変化のパターンから読み取れる仮説であり、特定の施設や制度変更を断定するものではありません。実際の背景については、山口県や各市の廃棄物処理実施計画・実績報告等の一次情報を合わせて確認することをおすすめします。
       </div>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        単一の自治体の数字だけを見ていると気づきにくい変化も、同じ地域の複数自治体を横串で比較すると、統計上の「事件」が見えてくることがあります。山口県のケースは、リサイクル率という指標が、住民の分別行動だけでなく、広域的な処理・資源化の仕組みにも大きく左右されることを示す好例です。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、都道府県内の市区町村を一覧で比較できます。気になる地域があれば、周辺自治体と合わせて推移を確認してみてください。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>山口県内の市町別リサイクル率の推移を、ランキングとグラフで詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=pref&code=35&year=R4&metric=recycling_rate_r_pct">ダッシュボードで確認する →</a>
       </div>
     </article>
 

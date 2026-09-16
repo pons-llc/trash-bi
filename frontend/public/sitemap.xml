@@ -26,6 +26,56 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://trash-bi.pons-llc.com/articles/covid-household-business-waste</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/yamaguchi-recycling-rate-drop</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/fukuoka-recycling-rate-gap-cluster</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/shiga-inukami-recycling-collapse</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/fukushima-return-zone-waste</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/izumisano-airport-waste</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/waste-cost-per-ton-nara-tokyo</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/recycling-rate-final-disposal-myth</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/final-disposal-declining-trend</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trash-bi.pons-llc.com/articles/depopulation-high-waste-towns</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://trash-bi.pons-llc.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>

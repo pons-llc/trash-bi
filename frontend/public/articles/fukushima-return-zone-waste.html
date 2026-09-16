@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>人口はあるのに、ごみがほとんど出ない町——双葉町・大熊町のデータが語る歩み | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="福島県双葉町・大熊町の1人1日ごみ排出量は全国平均の数十分の一という極端に低い水準です。東京電力福島第一原発事故による避難指示の影響で、住民登録人口と実際の居住者数が大きく異なることが背景にあります。環境省データから、両町の変化を丁寧にたどります。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/fukushima-return-zone-waste" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="人口はあるのに、ごみがほとんど出ない町——双葉町・大熊町のデータが語る歩み" />
+    <meta property="og:description" content="福島県双葉町・大熊町のごみ排出量が極端に少ない背景と、令和元〜6年度の変化を環境省データで確認する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/fukushima-return-zone-waste" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "人口はあるのに、ごみがほとんど出ない町——双葉町・大熊町のデータが語る歩み",
+        "description": "福島県双葉町・大熊町の1人1日ごみ排出量が極端に低い理由と、令和元〜6年度の推移を検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/fukushima-return-zone-waste"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 双葉町・大熊町のごみ排出量が語るもの</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>人口はあるのに、ごみがほとんど出ない町<br />——双葉町・大熊町のデータが語る歩み</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = '全国平均の1/6以下。福島県双葉町のごみ排出量データから見える、震災から続く歩み'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/fukushima-return-zone-waste'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,86 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead"><a href="/app/?level=city&code=07546&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で1人1日あたりごみ排出量のランキングを下位から見ていくと、福島県双葉町・大熊町が全国平均を大きく下回る数値で並んでいます。令和6年度の双葉町は<strong>91.9g</strong>、全国平均（551.6g）のわずか6分の1です。これは住民がごみを出さない生活をしているからではありません。東京電力福島第一原子力発電所事故にともなう避難指示の影響で、住民登録がある一方、実際にその町に居住している人は限られているという事情が背景にあります。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num muted">91.9g</div>
+          <div class="label">双葉町 1人1日排出量（R6）</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
+          <div class="num">551.6g</div>
           <div class="label">全国平均（R6）</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num green">約22倍</div>
+          <div class="label">双葉町の排出量増加（R1比、4.1g→91.9g）</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>「登録人口」と「実際の居住者」が一致しない特殊な事情</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
+        2011年の東日本大震災にともなう東京電力福島第一原発事故により、双葉町・大熊町を含む周辺自治体は避難指示の対象となりました。環境省データが用いる「人口」は住民基本台帳上の登録人口であり、避難指示区域の見直しや帰還困難区域の再編が進む中でも、多くの住民が登録上は町の住民でありながら、実際には町外で避難生活を続けているケースが多く残っています。
       </p>
       <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        この結果、総排出量を住民登録人口で割って算出する「1人1日あたりごみ排出量」は、実際にその地域で生活している人の数に対しては過小な分母（多すぎる人口）で計算されることになり、数値が極端に低く出ます。
+      </p>
+
+      <h2>令和元〜6年度で見る、緩やかな回復の軌跡</h2>
+      <p>
+        双葉町・大熊町とも、避難指示の段階的な解除や特定復興再生拠点区域の整備にともなって、帰還・居住や事業活動が徐々に再開されています。この動きは、ごみ排出量の推移にも表れています。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          双葉町・大熊町の1人1日ごみ排出量の推移（環境省データより）
         </caption>
         <thead>
           <tr>
-            <th>自治体</th>
-            <th>人口</th>
-            <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>年度</th>
+            <th>双葉町</th>
+            <th>大熊町</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>R1</td><td>4.1g</td><td>72.8g</td></tr>
+          <tr><td>R2</td><td>28.7g</td><td>109.7g</td></tr>
+          <tr><td>R3</td><td>40.4g</td><td>116.8g</td></tr>
+          <tr><td>R4</td><td>48.3g</td><td>151.2g</td></tr>
+          <tr><td>R5</td><td>55.9g</td><td>171.3g</td></tr>
+          <tr><td>R6</td><td>91.9g</td><td>161.7g</td></tr>
         </tbody>
       </table>
 
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
-      </p>
-
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
-      <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
+        双葉町は令和元年度の4.1gからほぼ一貫して増加を続け、令和6年度には91.9gに達しています。町の一部で特定復興再生拠点区域の避難指示が解除され、居住や事業所の再開が進んだ時期と重なります。大熊町も同様に増加基調が続いていますが、令和6年度はやや減少しており、単純な右肩上がりではない点にも注意が必要です。
       </p>
       <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+        隣接する浪江町・富岡町は、双葉町・大熊町よりも早い段階で避難指示の解除が進んだ地域を含み、1人1日排出量もそれぞれ265.7g、312.0g（令和6年度）と、全国平均には及ばないものの、双葉町・大熊町よりは高い水準で推移しています。避難指示解除の進み方の違いが、そのまま統計上の数字の違いとして表れていると考えられます。
       </p>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+        <strong>数字が示しているもの</strong>
+        ：これらの町のごみ排出量の低さは、住民の生活習慣の指標ではなく、震災・原発事故からの復興の進み具合を映す一つの側面です。排出量の緩やかな増加は、町での生活や事業活動が少しずつ戻りつつあることの表れと読むことができます。
       </div>
 
       <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+        除染にともなって発生する土壌や廃棄物は、本サイトが扱う一般廃棄物とは別の枠組み（除去土壌等）で管理されており、このデータには含まれていません。また、日中に復興工事などで町内に滞在する作業者は住民登録上の人口には含まれず、その活動にともなうごみの一部が事業系ごみとして計上されている可能性があります。数字の解釈には、こうしたデータの性質を踏まえたうえでご留意ください。
       </div>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        「1人1日あたりごみ排出量」のような指標は、多くの自治体では生活実態を映す便利な物差しになりますが、住民登録人口と実際の居住者数が大きく異なる特殊な事情を持つ地域では、そのまま比較することが適切でない場合があります。数字の裏にある地域の背景を理解した上で読み解くことが大切です。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、こうした自治体についても他の地域と同じ形式でデータを確認できます。数字だけでなく、その背景にある事情も合わせて見ていただければと思います。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>福島県内の自治体別データを、推移グラフで確認してみましょう。</p>
+        <a class="cta-btn" href="/app/?level=city&code=07546&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
       </div>
     </article>
 

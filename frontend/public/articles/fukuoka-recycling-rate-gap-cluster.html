@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>福岡県のある地域だけリサイクル率が「R99%→R'5%」になる理由 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="福岡県の鞍手町・宮若市・小竹町では、リサイクル率Rが94〜95%と全国トップクラスなのに、厳格な指標R'では5〜11%まで下がります。この差は6年間ずっと安定しており、埼玉県日高市とは違うパターンを見せています。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/fukuoka-recycling-rate-gap-cluster" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="福岡県のある地域だけリサイクル率が「R99%→R'5%」になる理由" />
+    <meta property="og:description" content="福岡県北部の複数の町で共通して見られる、極端に大きく安定したリサイクル率R-R'ギャップを検証する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/fukuoka-recycling-rate-gap-cluster" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "福岡県のある地域だけリサイクル率が「R99%→R'5%」になる理由",
+        "description": "福岡県の鞍手町・宮若市・小竹町に共通する、大きく安定したリサイクル率R-R'ギャップを検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/fukuoka-recycling-rate-gap-cluster"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 福岡県のR-R'ギャップが大きい町</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>福岡県のある地域だけリサイクル率が<br />「R94%→R'5%」になる理由</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = '福岡県のある3つの町、リサイクル率Rは94%超なのにR\'は一桁台。しかもこの差、6年間ずっと同じだった'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/fukuoka-recycling-rate-gap-cluster'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,79 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead"><a href="/app/?level=city&code=40402&year=R6&metric=recycling_rate_r_pct">日本ごみ処理ダッシュボード</a>で「リサイクル率R」と「リサイクル率R'」の差が大きい自治体を探すと、<a href="/articles/hidaka-recycling-rate-99">以前取り上げた埼玉県日高市</a>（差84.4pt）を上回る町が福岡県に複数見つかります。福岡県鞍手町は令和6年度でR94.5%・R'5.0%、差にして<strong>89.5ポイント</strong>。隣接する宮若市も同様の傾向で、この2町は全国でもトップクラスのR-R'ギャップを記録しています。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num">94.5%</div>
+          <div class="label">鞍手町 リサイクル率R（R6）</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
-          <div class="label">全国平均（R6）</div>
+          <div class="num muted">5.0%</div>
+          <div class="label">鞍手町 リサイクル率R'（R6）</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num">89.5pt</div>
+          <div class="label">R-R'の差（日高市の84.4ptを上回る）</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>1つの町の特殊事情ではなく、隣接する複数の町に共通</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
-      </p>
-      <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        日高市のケースが「1つの自治体」の現象だったのに対し、福岡県のこのエリアでは、隣接する複数の自治体で同じパターンが見られます。福岡県北部、遠賀・鞍手地域に位置する鞍手町・宮若市・小竹町は、いずれもリサイクル率Rが90%台という高水準でありながら、R'は一桁〜10%台前半にとどまります。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          福岡県北部3町のリサイクル率R・R'（令和6年度、環境省データより）
         </caption>
         <thead>
           <tr>
             <th>自治体</th>
             <th>人口</th>
-            <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>リサイクル率R</th>
+            <th>リサイクル率R'</th>
+            <th>差</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>鞍手町</td><td>14,840人</td><td>94.5%</td><td>5.0%</td><td>89.5pt</td></tr>
+          <tr><td>宮若市</td><td>25,910人</td><td>94.9%</td><td>7.9%</td><td>87.0pt</td></tr>
+          <tr><td>小竹町</td><td>6,905人</td><td>94.8%</td><td>9.0%</td><td>85.8pt</td></tr>
+          <tr><td>粕屋町</td><td>48,848人</td><td>63.5%</td><td>8.9%</td><td>54.6pt</td></tr>
         </tbody>
       </table>
 
+      <h2>日高市との決定的な違い：単年の特殊値ではなく6年間安定</h2>
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
-      </p>
-
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
-      <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
+        鞍手町・宮若市・小竹町のR-R'ギャップは、令和元年度から令和6年度まで一貫してほぼ同じ水準で推移しています。鞍手町のリサイクル率Rは6年間ずっと93〜95%の狭いレンジに収まり、R'も4.6〜5.6%の範囲でほとんど動きません。前述の<a href="/articles/yamaguchi-recycling-rate-drop">山口県の記事</a>で見たような「ある年に急落する」パターンとは対照的に、この地域では特定の資源化手法が長期間・継続的に運用されていると考えられます。
       </p>
       <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+        この安定性は、日高市の記事で紹介した「焼却灰のセメント原料化など、R'算定時に除外される手法」を、この地域が制度として恒常的に組み込んでいることを示唆しています。鞍手町・宮若市・小竹町は地理的に近接しており、ごみ処理を広域の一部事務組合で共同運営しているケースが一般的です。同じ処理体制を共有する自治体で同じ現象が揃って見られることは、この仮説と整合的です。
       </p>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+        <strong>粕屋町は少し違うパターン</strong>
+        ：福岡市に隣接する粕屋町は、人口規模がこの3町より大きく（約4.9万人）、リサイクル率Rも63.5%と3町より低めですが、R'は同程度の8.9%。R自体の水準は違っても、R'算定除外分の存在という構造は共通しています。
       </div>
 
       <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+        本サイトのデータには、各自治体がどの一部事務組合・処理施設を利用しているかという情報は含まれていません。上記の「広域処理体制を共有している」という説明は、地理的な近接性と数値パターンの類似性から導いた仮説であり、断定するものではありません。
       </div>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        リサイクル率の「からくり」は、1つの自治体だけでなく、同じ処理体制を共有する地域単位で現れることがあります。近隣自治体のリサイクル率が軒並み高い（あるいは低い）場合、それは住民の分別意識の差というより、地域全体の処理インフラの違いを反映している可能性を疑ってみる価値があります。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、都道府県内の市区町村を地図上で比較できます。近隣自治体と数値がどれだけ似ているか、ぜひ確認してみてください。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>福岡県内の市町村別リサイクル率を、地図とランキングで詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=city&code=40402&year=R6&metric=recycling_rate_r_pct">ダッシュボードで確認する →</a>
       </div>
     </article>
 

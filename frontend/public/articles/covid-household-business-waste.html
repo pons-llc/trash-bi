@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>コロナは家庭ごみを増やし、事業系ごみを減らした——全国データで見る5年間 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="令和元〜6年度の全国データを見ると、コロナ禍で家庭ごみが増え事業系ごみが急減し、5年かけてほぼ元の比率に戻ったことが分かります。環境省データで振り返る「巣ごもり」の実態。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/covid-household-business-waste" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="コロナは家庭ごみを増やし、事業系ごみを減らした——全国データで見る5年間" />
+    <meta property="og:description" content="令和元〜6年度の全国データで、コロナ禍の家庭ごみ増加と事業系ごみ急減、そして5年での回復を読み解く。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/covid-household-business-waste" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "コロナは家庭ごみを増やし、事業系ごみを減らした——全国データで見る5年間",
+        "description": "環境省データにもとづき、コロナ禍前後の家庭系・事業系ごみ排出量の推移を全国集計で検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/covid-household-business-waste"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ コロナ禍のごみ排出量の変化</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>コロナは家庭ごみを増やし、事業系ごみを減らした<br />——全国データで見る5年間</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = 'コロナ禍で家庭ごみは増え、事業系ごみは1年で137万t減った。5年かけて元の比率に戻った全国データを読み解く'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/covid-household-business-waste'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,84 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead"><a href="/app/?year=R2&category=household&metric=per_capita_household_g">日本ごみ処理ダッシュボード</a>で年度を切り替えながら全国合計を見ると、ある年だけ家庭系ごみと事業系ごみのバランスが大きく崩れていることに気づきます。令和2年度、新型コロナウイルス感染拡大にともなう外出自粛が本格化した年です。全国の家庭系ごみは前年から<strong>約57万t増加</strong>した一方、事業系ごみは<strong>約137万t（10.5%）</strong>も減少しました。この「ねじれ」は、5年かけてどう推移したのでしょうか。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num muted">+57万t</div>
+          <div class="label">家庭系ごみの増加量（R1→R2）</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
-          <div class="label">全国平均（R6）</div>
+          <div class="num muted">▲137万t</div>
+          <div class="label">事業系ごみの減少量（R1→R2、-10.5%）</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num">0.469</div>
+          <div class="label">事業系/家庭系比率（R6、R1超えの水準に回復）</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>令和2年度、事業系ごみだけが急減した</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
+        全国の市区町村を合計すると、令和元年度の家庭系ごみは2,780.6万t、事業系ごみは1,302.2万tでした。ところが令和2年度になると、家庭系ごみは2,837.3万tに増えた一方、事業系ごみは1,165.3万tまで落ち込みます。事業系ごみと家庭系ごみの比率（事業系÷家庭系）は、令和元年度の0.468から令和2年度には0.411まで低下しました。
       </p>
       <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        飲食店やオフィス、店舗などから出る事業系ごみが減り、家庭から出る家庭系ごみが増える——これは、緊急事態宣言や外出自粛によって「外で消費する生活」から「家の中で消費する生活」へと、社会全体のごみの発生源が一時的にシフトしたことを裏付けるデータです。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          全国合計の家庭系・事業系ごみ排出量の推移（環境省データより）
         </caption>
         <thead>
           <tr>
-            <th>自治体</th>
-            <th>人口</th>
-            <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>年度</th>
+            <th>家庭系ごみ</th>
+            <th>事業系ごみ</th>
+            <th>事業系/家庭系比率</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>R1</td><td>2,780.6万t</td><td>1,302.2万t</td><td>0.468</td></tr>
+          <tr><td>R2</td><td>2,837.3万t</td><td>1,165.3万t</td><td>0.411</td></tr>
+          <tr><td>R3</td><td>2,765.3万t</td><td>1,170.6万t</td><td>0.423</td></tr>
+          <tr><td>R4</td><td>2,689.4万t</td><td>1,193.5万t</td><td>0.444</td></tr>
+          <tr><td>R5</td><td>2,572.1万t</td><td>1,185.4万t</td><td>0.461</td></tr>
+          <tr><td>R6</td><td>2,506.5万t</td><td>1,174.5万t</td><td>0.469</td></tr>
         </tbody>
       </table>
 
+      <h2>1人あたりで見ても「巣ごもり」は表れている</h2>
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
-      </p>
-
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
-      <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
-      </p>
-      <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+        人口減少が続く中でも、1人1日あたりの家庭系ごみ排出量は令和元年度の599.1gから令和2年度には613.3gへと増加しています。これは全国的な人口減少のトレンドに反して増えた、数少ない年です。令和3年度以降は再び減少に転じ、令和6年度には551.6gまで下がりました。人口減少に加えて、家庭ごみの削減も進んでいることが分かります。
       </p>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+        <strong>ポイント</strong>
+        ：令和2年度は「総排出量」で見ると事業系の減少が家庭系の増加を上回り、全体としてはごみが減ったように見えます。しかし中身を分解すると、住民の生活行動が大きく変わった年だったことが読み取れます。
       </div>
 
-      <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
-      </div>
+      <h2>5年かけて「元の生活」に戻った、いや、それ以上に</h2>
+      <p>
+        注目すべきは令和6年度の数字です。事業系/家庭系比率は0.469まで回復し、実はコロナ前の令和元年度（0.468）をわずかに上回りました。事業系ごみは令和2年度を底に緩やかに増加を続け、家庭系ごみは人口減少や節約志向を背景に減少を続けています。オフィス回帰や外食・観光需要の回復が、事業系ごみという形で数字に表れていると考えられます。
+      </p>
+      <p>
+        一方で総排出量そのものは令和元年度の4,082.8万tから令和6年度の3,681.1万tまで、一貫して減少を続けています。コロナ禍による一時的な「ねじれ」はあったものの、長期的なごみ排出量の減少トレンド自体は途切れていません。
+      </p>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        単年度のランキングだけを見ていると、令和2年度のような「事業系ごみが少ない年」を、そのまま自治体の努力の成果と誤読してしまう可能性があります。経年推移で全国の動きと比較することで、個々の自治体の変化が構造的な要因（コロナ禍のような社会全体の出来事）によるものか、その自治体固有の取り組みによるものかを見分けやすくなります。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、都道府県・市区町村ごとに令和元〜6年度の推移グラフを確認できます。気になる自治体の事業系・家庭系の内訳が、コロナ禍でどう動いたか比べてみてください。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>全国・都道府県・市区町村の家庭系/事業系ごみの推移を、グラフで詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?year=R2&category=household&metric=per_capita_household_g">ダッシュボードで確認する →</a>
       </div>
     </article>
 

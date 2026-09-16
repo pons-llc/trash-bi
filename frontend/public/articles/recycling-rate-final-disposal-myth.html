@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>リサイクル率が高い県ほどごみが減るとは限らない、というデータの話 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="都道府県別のリサイクル率と最終処分率の相関係数はマイナス0.56。ゆるやかな負の相関はあるものの、北海道のようにリサイクル率が高くても最終処分率も高い例外や、三重県のようにリサイクル率が低くても最終処分率が極めて低い例外が存在します。環境省データで「リサイクル率神話」を検証します。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/recycling-rate-final-disposal-myth" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="リサイクル率が高い県ほどごみが減るとは限らない、というデータの話" />
+    <meta property="og:description" content="都道府県別のリサイクル率と最終処分率の相関を検証し、例外的なパターンを紹介する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/recycling-rate-final-disposal-myth" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "リサイクル率が高い県ほどごみが減るとは限らない、というデータの話",
+        "description": "都道府県別のリサイクル率と最終処分率の相関係数と例外パターンを検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/recycling-rate-final-disposal-myth"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ リサイクル率と最終処分率の関係</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>リサイクル率が高い県ほど<br />ごみが減るとは限らない、というデータの話</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（全期間合計（令和元〜6年度））</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = '都道府県のリサイクル率と最終処分率、相関係数はマイナス0.56。「高リサイクル率=ごみが少ない」とは限らない'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/recycling-rate-final-disposal-myth'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,96 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead">「リサイクル率が高い自治体ほど、埋め立てるごみ（最終処分量）は少ないはずだ」——<a href="/app/?level=pref&code=31&year=ALL&metric=final_disposal_rate_pct">日本ごみ処理ダッシュボード</a>のデータで、この直感がどこまで正しいかを検証してみました。都道府県別のリサイクル率と最終処分率（総排出量に占める最終処分量の割合）の相関係数を計算すると<strong>-0.558</strong>。方向性としては直感どおり負の相関ですが、"強い相関"と呼べるほどではなく、いくつもの例外的な県が存在します。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num muted">-0.558</div>
+          <div class="label">リサイクル率×最終処分率の相関係数</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
-          <div class="label">全国平均（R6）</div>
+          <div class="num">28.5% / 6.4%</div>
+          <div class="label">鳥取県：高リサイクル率・低最終処分率</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num muted">23.0% / 17.2%</div>
+          <div class="label">北海道：高めのリサイクル率でも最終処分率は最悪</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>両方が優れている県、両方とも厳しい県</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
-      </p>
-      <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        鳥取県・山口県・岡山県は、リサイクル率が全国トップクラスで、なおかつ最終処分率も低い「優等生」の組み合わせです。逆に和歌山県・大阪府・福島県は、リサイクル率が全国最下位クラスで、最終処分率も高いという「両方とも厳しい」組み合わせになっています。ここまでは直感どおりです。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          リサイクル率・最終処分率が「両方優秀」「両方厳しい」都道府県（環境省データより）
         </caption>
         <thead>
           <tr>
-            <th>自治体</th>
-            <th>人口</th>
-            <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>都道府県</th>
+            <th>リサイクル率R</th>
+            <th>最終処分率</th>
+            <th>傾向</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>鳥取県</td><td>28.5%</td><td>6.4%</td><td>両方優秀</td></tr>
+          <tr><td>山口県</td><td>27.5%</td><td>4.8%</td><td>両方優秀</td></tr>
+          <tr><td>岡山県</td><td>27.0%</td><td>4.3%</td><td>両方優秀</td></tr>
+          <tr><td>和歌山県</td><td>12.4%</td><td>12.8%</td><td>両方厳しい</td></tr>
+          <tr><td>大阪府</td><td>12.9%</td><td>12.2%</td><td>両方厳しい</td></tr>
+          <tr><td>福島県</td><td>13.1%</td><td>11.7%</td><td>両方厳しい</td></tr>
         </tbody>
       </table>
 
+      <h2>「例外」が教えてくれること</h2>
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
+        一方で、この傾向に当てはまらない県も少なくありません。北海道はリサイクル率23.0%と全国平均をやや上回る水準にあるにもかかわらず、最終処分率は17.2%と全国最悪。広い土地に恵まれ埋立処分場を確保しやすいことが、最終処分量そのものを減らす動機になりにくい可能性があります。
+      </p>
+      <p>
+        逆に、三重県・佐賀県・静岡県は、リサイクル率が18〜20%台と全国平均程度でありながら、最終処分率は3.2〜4.6%と全国トップクラスの低さです。これらの県では、資源として再利用する量を増やすというより、焼却によって埋立量そのものを徹底的に減らす（減量化率を高める）ことで、最終処分率を下げていると考えられます。
       </p>
 
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
-      <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
-      </p>
-      <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
-      </p>
+      <table>
+        <caption>
+          相関から外れる「例外」の都道府県（環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>都道府県</th>
+            <th>リサイクル率R</th>
+            <th>最終処分率</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>北海道</td><td>23.0%</td><td>17.2%</td><td>リサイクル率は平均以上なのに最終処分率が最悪</td></tr>
+          <tr><td>三重県</td><td>20.4%</td><td>3.2%</td><td>リサイクル率は平均的でも最終処分率は全国最低</td></tr>
+          <tr><td>佐賀県</td><td>19.4%</td><td>4.1%</td><td>同上の傾向</td></tr>
+          <tr><td>静岡県</td><td>18.2%</td><td>4.6%</td><td>同上の傾向</td></tr>
+        </tbody>
+      </table>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
-      </div>
-
-      <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+        <strong>リサイクル率は「一つの指標」にすぎない</strong>
+        ：最終処分量を減らす方法は、資源化（リサイクル）だけではありません。焼却による減量化の効率、そもそもの排出量の少なさ、埋立処分場の確保のしやすさなど、複数の要因が絡み合っています。リサイクル率だけを見て自治体の環境性能を評価するのは、片方の目でしか見ていないのと同じかもしれません。
       </div>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        「リサイクル率が高い＝環境に優しい自治体」という見方は、半分正しく半分は単純化しすぎています。最終処分率・減量処理率・1人あたり排出量など、複数の指標を組み合わせて初めて、その自治体のごみ処理の全体像が見えてきます。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、指標を切り替えながら都道府県・市区町村を比較できます。リサイクル率だけでなく、最終処分率もあわせてチェックしてみてください。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>都道府県別のリサイクル率・最終処分率を、指標を切り替えて詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=pref&code=31&year=ALL&metric=final_disposal_rate_pct">ダッシュボードで確認する →</a>
       </div>
     </article>
 

@@ -20,21 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <title>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題 | 日本ごみ処理ダッシュボード</title>
-    <meta
-      name="description"
-      content="神奈川県箱根町の1人1日あたりごみ排出量は3,432gと、全国平均の約4倍。人口1万人の町でなぜこれほど多いのか。事業系ごみの比率から、観光地特有の統計のからくりを環境省データで読み解きます。"
-    />
-    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <title>過疎地なのにごみが多い3つの町、理由は三者三様だった | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="人口減少が続く夕張市・根室市・新上五島町は、いずれも1人1日あたりごみ排出量が全国上位です。しかし夕張市は事業系ごみ比率の急上昇、根室市は水産加工業由来とみられる安定した高比率、新上五島町は生活系ごみが中心という、三者三様の異なるパターンを環境省データで確認します。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/depopulation-high-waste-towns" />
 
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
-    <meta property="og:title" content="箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題" />
-    <meta
-      property="og:description"
-      content="人口1万人の箱根町のごみ排出量が全国平均の4倍になる理由を、事業系ごみの比率から読み解きます。"
-    />
-    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita" />
+    <meta property="og:title" content="過疎地なのにごみが多い3つの町、理由は三者三様だった" />
+    <meta property="og:description" content="人口減少地域でありながらごみ排出量が多い夕張市・根室市・新上五島町の異なる要因を環境省データで検証する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/depopulation-high-waste-towns" />
     <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,14 +38,14 @@
       {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？観光地の「隠れ人口」問題",
-        "description": "神奈川県箱根町の1人1日あたりごみ排出量は3,432gと全国平均の約4倍。事業系ごみの比率から観光地特有の統計のからくりを環境省データで読み解く。",
+        "headline": "過疎地なのにごみが多い3つの町、理由は三者三様だった",
+        "description": "夕張市・根室市・新上五島町のごみ排出量が多い異なる要因を、環境省データの推移から検証する。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
         "author": { "@type": "Organization", "name": "pons-llc" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
-        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita"
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/depopulation-high-waste-towns"
       }
     </script>
 
@@ -64,6 +58,7 @@
         --color-text-muted: #767676;
         --color-border: #e6e6e6;
         --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
         --color-accent-orange: #c74700;
         --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
       }
@@ -182,6 +177,9 @@
       }
       .stat-box .num.muted {
         color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
       }
       .stat-box .label {
         font-size: 11.5px;
@@ -316,7 +314,7 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
-    </style>
+</style>
   </head>
   <body>
     <header class="site-header">
@@ -327,10 +325,10 @@
     </header>
 
     <article>
-      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 箱根町のごみ排出量が多い理由</p>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 過疎地でごみが多い3つの町</p>
       <span class="kicker">データ深掘り</span>
-      <h1>箱根町の1人1日ごみ排出量はなぜ全国トップクラスなのか？<br />観光地の「隠れ人口」問題</h1>
-      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+      <h1>過疎地なのにごみが多い3つの町<br />理由は三者三様だった</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
 
       <div class="share-widget">
         <span class="share-label">シェア</span>
@@ -340,8 +338,8 @@
       </div>
       <script>
         ;(function () {
-          var shareText = '人口1万人の箱根町、ごみ排出量はなぜ全国平均の4倍？観光地の「隠れ人口」問題を環境省データで読み解く'
-          var shareUrl = 'https://trash-bi.pons-llc.com/articles/hakone-waste-per-capita'
+          var shareText = '人口が減り続けているのに、1人あたりのごみは増え続ける町がある。夕張市・根室市・新上五島町、それぞれ違う理由'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/depopulation-high-waste-towns'
           document.getElementById('share-x').href =
             'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
           document.getElementById('share-line').href =
@@ -358,105 +356,101 @@
         })()
       </script>
 
-      <p class="lead">
-        <a href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で「1人1日あたりごみ排出量」のランキングを見ると、人口約1万人の神奈川県箱根町が全国上位に入ります。令和6年度の数値は<strong>1人あたり1日3,432g</strong>。全国平均（866g）の約4倍、神奈川県平均（753g）と比べても約4.6倍という突出した数字です。人口の少ない町がなぜこれほど多くのごみを出しているのでしょうか。
-      </p>
+      <p class="lead"><a href="/app/?level=city&code=01209&year=R6&category=total&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で1人1日あたりごみ排出量の上位を見ると、人口減少が続く北海道夕張市・根室市、長崎県新上五島町が名を連ねています。過疎地では総排出量が減るのは当然としても、1人あたりの排出量まで多いのはなぜでしょうか。3つの町のデータを見ていくと、それぞれまったく異なる背景が浮かび上がってきました。</p>
 
+      
       <div class="stat-row">
         <div class="stat-box">
-          <div class="num muted">3,432g</div>
-          <div class="label">箱根町の1人1日排出量（R6）</div>
+          <div class="num muted">1,847.5g</div>
+          <div class="label">夕張市 1人1日排出量（R6、全国平均の約2.2倍）</div>
         </div>
         <div class="stat-box">
-          <div class="num">866g</div>
-          <div class="label">全国平均（R6）</div>
+          <div class="num muted">1,508.9g</div>
+          <div class="label">根室市 1人1日排出量（R6）</div>
         </div>
         <div class="stat-box">
-          <div class="num">753g</div>
-          <div class="label">神奈川県平均（R6）</div>
+          <div class="num muted">1,407.9g</div>
+          <div class="label">新上五島町 1人1日排出量（R6）</div>
         </div>
       </div>
 
-      <h2>事業系ごみが生活系ごみの3倍以上</h2>
+      <h2>夕張市：人口減少と反比例するように事業系ごみ比率が上昇</h2>
       <p>
-        箱根町の令和6年度のごみ内訳を見ると、住民の生活から出る「生活系ごみ」が3,308t、飲食店やホテル・旅館などから出る「事業系ごみ」が10,239t。事業系ごみは生活系ごみの<strong>約3.1倍</strong>に達しています。
-      </p>
-      <p>
-        これは全国的に見ても異例の比率です。令和6年度の全国の市区町村平均では、事業系ごみは生活系ごみの<strong>約0.39倍</strong>程度にとどまります。つまり箱根町は、標準的な自治体と比べて事業系ごみの割合が桁違いに大きいということです。
+        財政破綻からの再生で知られる夕張市は、令和元年度から令和6年度の6年間で人口が7,907人から6,224人へ約21%減少しました。ところが1人1日あたり排出量は1,156.9gから1,847.5gへ、約60%も増加しています。人口が減っているのに1人あたりの排出量が増えるのは、事業系ごみの比率が同時に急上昇しているためです。事業系/生活系比率は0.8倍（R1）から1.54倍（R6）へとほぼ倍増しました。
       </p>
 
       <table>
         <caption>
-          観光地の事業系/生活系ごみ比率（令和6年度、環境省データより）
+          夕張市の人口と1人1日排出量の推移（環境省データより）
         </caption>
         <thead>
           <tr>
-            <th>自治体</th>
+            <th>年度</th>
             <th>人口</th>
             <th>1人1日排出量</th>
-            <th>事業系/生活系 比率</th>
+            <th>事業系/生活系比率</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>箱根町（神奈川・温泉/観光地）</td>
-            <td>10,815人</td>
-            <td>3,432g</td>
-            <td>約3.10倍</td>
-          </tr>
-          <tr>
-            <td>草津町（群馬・温泉地）</td>
-            <td>6,041人</td>
-            <td>2,180g</td>
-            <td>約2.07倍</td>
-          </tr>
-          <tr>
-            <td>山中湖村（山梨・観光地）</td>
-            <td>5,816人</td>
-            <td>2,181g</td>
-            <td>約2.20倍</td>
-          </tr>
-          <tr>
-            <td>全国市区町村平均</td>
-            <td>—</td>
-            <td>866g</td>
-            <td>約0.39倍</td>
-          </tr>
+          <tr><td>R1</td><td>7,907人</td><td>1,156.9g</td><td>0.80</td></tr>
+          <tr><td>R3</td><td>6,959人</td><td>1,597.6g</td><td>1.17</td></tr>
+          <tr><td>R6</td><td>6,224人</td><td>1,847.5g</td><td>1.54</td></tr>
         </tbody>
       </table>
 
       <p>
-        草津町（群馬県の名湯）や山中湖村（富士五湖の観光地）も、箱根町ほどではないものの、事業系ごみの比率が全国平均を大きく上回り、1人1日排出量も全国上位に並びます。観光・温泉地に共通するパターンが見えてきます。
+        人口が小さい自治体ほど、特定の施設や事業所からまとまった量の事業系ごみが出ると、統計上の比率が大きく動きやすくなります。夕張市の場合、市内に大きな観光・医療・福祉関連の施設が存在すれば、人口減少が進んでも施設由来の事業系ごみは急には減らず、結果として1人あたりの数字を押し上げる構造になっていると考えられます。
       </p>
 
-      <h2>「1人1日排出量」の分母が抱える弱点</h2>
+      <h2>根室市：水産加工業由来とみられる、安定した高比率</h2>
       <p>
-        1人1日あたりのごみ排出量は、<strong>総排出量 ÷ 住民登録人口 ÷ 365日</strong>で計算されます。ここで使われる「人口」は住民票のある人、つまり定住人口です。しかし箱根町のようにホテル・旅館・飲食店が集積する観光地では、宿泊客や日帰り客が年間を通じて大量に訪れ、その滞在中に発生するごみの多くは「事業系ごみ」として計上されます。
+        日本有数の漁港を抱える根室市は、事業系/生活系比率が0.63倍（R1）〜0.69倍（R6）と、全国平均（0.39〜0.47倍程度）を上回る水準で安定して推移しています。夕張市のような急激な変化ではなく、緩やかな上昇にとどまっている点が特徴です。水産加工業が地域の基幹産業である根室市では、水揚げ・加工にともなう事業系ごみが年間を通じて安定的に発生しており、これが1人あたり排出量を押し上げている可能性があります。
       </p>
+
+      <h2>新上五島町：事業系ではなく、生活系ごみが中心</h2>
       <p>
-        つまり、ごみを実際に発生させている「昼間人口・交流人口」は住民登録人口よりもはるかに多いのに、統計上の分母は少ないままです。この結果、観光地の1人1日排出量は実態以上に大きく見えてしまう構造的な特徴があります。
+        長崎県の離島、新上五島町は事情がまったく異なります。事業系/生活系比率はわずか0.07〜0.09倍と、他の2市よりもむしろ全国平均を下回る低さです。つまり新上五島町の高い排出量は、事業系ごみではなく生活系ごみが主体だということになります。しかも1人1日排出量は令和元年度の1,592.9gから令和6年度には1,407.9gへと、緩やかに減少する傾向にあります。
       </p>
 
       <div class="callout">
-        <strong>言い換えると</strong>
-        ：箱根町の住民が全国平均の4倍もごみを出す生活をしているわけではなく、年間を通じて町を訪れる膨大な観光客の存在が、住民人口を分母とする統計に表れている可能性が高いということです。
+        <strong>離島特有の構造の可能性</strong>
+        ：本土から離れた離島では、収集運搬の効率がどうしても本土より劣りやすく、また海岸に漂着する海洋ごみの処理を一般廃棄物として扱っているケースもあります。新上五島町の高い生活系ごみの水準は、こうした離島特有の事情が影響している可能性がありますが、本サイトのデータだけでは特定できません。
       </div>
 
+      <table>
+        <caption>
+          3町の事業系/生活系比率比較（令和6年度、環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>自治体</th>
+            <th>事業系/生活系比率</th>
+            <th>主な傾向</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>夕張市</td><td>1.54倍</td><td>事業系ごみが急増</td></tr>
+          <tr><td>根室市</td><td>0.69倍</td><td>事業系ごみがやや多い（安定）</td></tr>
+          <tr><td>新上五島町</td><td>0.09倍</td><td>ほぼ生活系ごみ（全国平均より事業系は少ない）</td></tr>
+        </tbody>
+      </table>
+
       <div class="caveat">
-        ただし、本サイトが利用する環境省データには宿泊者数や観光客数そのものは含まれていません。上記は「事業系ごみが生活系ごみの何倍か」という比率と、他の観光地との比較パターンから導いた推測であり、断定するものではない点にご留意ください。
+        本サイトが利用する環境省データには、各自治体の主要産業や施設の詳細、海洋ごみの計上方法までは含まれていません。上記の解説はデータから読み取れるパターンにもとづく仮説であり、断定するものではありません。
       </div>
 
       <h2>この事例から学べること</h2>
       <p>
-        「1人1日あたりごみ排出量」は自治体間の生活スタイルを比べる便利な指標ですが、<strong>観光・商業が盛んな自治体では住民人口と実際にごみを発生させる人口が大きくずれる</strong>ことがあります。こうした自治体を評価する際は、総排出量だけでなく、生活系・事業系の内訳や産業構造も合わせて見ることが欠かせません。
+        「1人1日あたり排出量が多い」という同じ現象でも、その背景は自治体によってまったく異なります。事業系ごみの内訳（急増か、安定した高水準か）や、生活系ごみの動向まで分解して見ることで、単純な「過疎地だから」では片付けられない、それぞれの地域固有の事情が見えてきます。
       </p>
       <p>
-        本サイトのダッシュボードでは、区分（生活系・事業系・合計）を切り替えて地図やランキングを表示できます。気になる自治体があれば、内訳を比べてみてください。
+        本サイトのダッシュボードでは、区分別・年度別に自治体データを比較できます。人口が少ないのに排出量が多い自治体を見つけたら、事業系・生活系の内訳を確認してみてください。
       </p>
 
+
       <div class="cta-band">
-        <p>箱根町や他の観光地のデータを、区分別に切り替えて詳しく見てみましょう。</p>
-        <a class="cta-btn" href="/app/?level=city&code=14382&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+        <p>人口減少地域のごみ排出パターンを、区分別・年度別に詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=city&code=01209&year=R6&category=total&metric=per_capita_total_g">ダッシュボードで確認する →</a>
       </div>
     </article>
 
