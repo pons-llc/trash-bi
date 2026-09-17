@@ -48,7 +48,7 @@
         "description": "埼玉県日高市の令和6年度リサイクル率は99.8%と全国トップクラス。しかし、より厳格な指標「リサイクル率R'」で見ると14.6%と埼玉県平均を下回る。環境省データからその理由を読み解く。",
         "datePublished": "2026-09-16",
         "dateModified": "2026-09-16",
-        "author": { "@type": "Organization", "name": "pons-llc" },
+        "author": { "@type": "Person", "name": "羽鳥", "jobTitle": "合同会社Pons 代表" },
         "publisher": { "@type": "Organization", "name": "pons-llc" },
         "image": "https://trash-bi.pons-llc.com/ogp.png",
         "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/hidaka-recycling-rate-99"
@@ -309,6 +309,58 @@
         color: var(--color-text-muted);
         text-decoration: underline;
       }
+
+      .author-card {
+        display: flex;
+        gap: 16px;
+        margin: 40px 0 0;
+        padding: 20px;
+        border-top: 2px solid var(--color-primary);
+        background: var(--color-bg);
+        border-radius: 0 0 10px 10px;
+      }
+      .author-avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 2px solid var(--color-border);
+      }
+      .author-body {
+        flex: 1;
+      }
+      .author-name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-text);
+        margin: 0 0 6px;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .author-role {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--color-text-muted);
+      }
+      .author-bio {
+        font-size: 13px;
+        color: var(--color-text-sub);
+        line-height: 1.7;
+        margin: 0;
+      }
+      @media (max-width: 600px) {
+        .author-card {
+          flex-direction: column;
+          gap: 12px;
+        }
+        .author-avatar {
+          width: 48px;
+          height: 48px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -457,6 +509,15 @@
         <p>日高市や他の自治体のデータを、地図・ランキング・推移グラフで詳しく見てみましょう。</p>
         <a class="cta-btn" href="/app/?level=city&code=11242&year=R6&metric=recycling_rate_r_pct">ダッシュボードで確認する →</a>
       </div>
+      <aside class="author-card">
+        <img src="/assets/author.png" alt="羽鳥" class="author-avatar" loading="lazy" width="64" height="64" />
+        <div class="author-body">
+          <p class="author-name">羽鳥<span class="author-role">合同会社Pons 代表 / DXコンサルタント</span></p>
+          <p class="author-bio">
+            神奈川県藤沢市役所にて情報政策・DX推進を長年担当。住民ポータルの導入や業務プロセス改革など、行政データの利活用に数多く携わる。退職後、合同会社Ponsを設立し、環境省の公開データをもとに本ダッシュボードの企画・分析・開発を行う。
+          </p>
+        </div>
+      </aside>
     </article>
 
     <footer class="site-footer">
