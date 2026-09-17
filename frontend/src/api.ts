@@ -37,6 +37,8 @@ export interface PrefStatRaw {
   final_disposal_rate_pct: number | null
   cost_per_ton_yen: number | null
   waste_expenditure_thousand_yen: number | null
+  construction_cost_per_ton_yen: number | null
+  operating_cost_per_ton_yen: number | null
 }
 
 export interface CityStatRaw {
@@ -88,6 +90,8 @@ export interface TrendSeriesPoint {
   final_disposal_rate_pct?: number | null
   cost_per_ton_yen?: number | null
   waste_expenditure_thousand_yen?: number | null
+  construction_cost_per_ton_yen?: number | null
+  operating_cost_per_ton_yen?: number | null
 }
 
 export interface TrendResponse {

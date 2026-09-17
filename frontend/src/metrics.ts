@@ -150,6 +150,27 @@ export const METRICS: MetricDef[] = [
     format: formatYenPerTon,
   },
   {
+    // 処理原価から建設改良費を除いた、日々の運営にかかるコストだけの原価。
+    // 合計の処理原価は清掃工場の建て替えがあった年度に跳ね上がるため、
+    // 年度をまたいだ比較にはこちらのほうが素直に読める。
+    key: 'operating_cost_per_ton_yen',
+    label: 'ごみ処理原価（運営費のみ）',
+    shortLabel: '処理原価(運営費)',
+    unit: '円/t',
+    betterDirection: 'asc',
+    levels: ['pref'],
+    format: formatYenPerTon,
+  },
+  {
+    key: 'construction_cost_per_ton_yen',
+    label: 'ごみ処理原価（建設改良費のみ）',
+    shortLabel: '処理原価(建設費)',
+    unit: '円/t',
+    betterDirection: 'asc',
+    levels: ['pref'],
+    format: formatYenPerTon,
+  },
+  {
     key: 'waste_expenditure_thousand_yen',
     label: 'ごみ処理事業費',
     shortLabel: '事業費',

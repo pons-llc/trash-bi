@@ -79,6 +79,8 @@ PREF_METRICS = {
     "population",
     "cost_per_ton_yen",
     "waste_expenditure_thousand_yen",
+    "construction_cost_per_ton_yen",
+    "operating_cost_per_ton_yen",
 }
 
 
@@ -118,7 +120,8 @@ def prefectures(year: str = Query("R6"), category: Category = Query("total")):
                    total_waste_t, household_waste_t, business_waste_t,
                    treated_amount_t, final_disposal_t,
                    recycling_rate_r_pct, final_disposal_rate_pct,
-                   cost_per_ton_yen, waste_expenditure_thousand_yen
+                   cost_per_ton_yen, waste_expenditure_thousand_yen,
+                   construction_cost_per_ton_yen, operating_cost_per_ton_yen
             FROM pref_stats
             WHERE fiscal_year = ?
             ORDER BY pref_code
@@ -222,7 +225,8 @@ def trend(level: Level = Query("pref"), code: str = Query(...)):
                 SELECT fiscal_year, population, total_waste_t, household_waste_t, business_waste_t,
                        treated_amount_t, final_disposal_t, per_capita_total_g, per_capita_household_g,
                        per_capita_business_g, recycling_rate_r_pct, final_disposal_rate_pct,
-                       cost_per_ton_yen, waste_expenditure_thousand_yen
+                       cost_per_ton_yen, waste_expenditure_thousand_yen,
+                       construction_cost_per_ton_yen, operating_cost_per_ton_yen
                 FROM pref_stats
                 WHERE pref_code = ? AND fiscal_year != 'ALL'
                 ORDER BY fiscal_year

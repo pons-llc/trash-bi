@@ -81,16 +81,26 @@ def forward_fill(seq):
 
 
 def find_column(
-    matrix, *, group_prefix=None, group_exclude=None, leaf_exact=None, leaf_prefix=None, require_no_r4=False
+    matrix,
+    *,
+    group_prefix=None,
+    group_exclude=None,
+    sub_prefix=None,
+    leaf_exact=None,
+    leaf_prefix=None,
+    require_no_r4=False,
 ):
     """Locate a single column index in the (r2, r3, r4) header matrix.
 
     group_prefix: substring the forward-filled r2 (group label) must start with
+    sub_prefix: substring the forward-filled r3 (subgroup label) must start with
+        (needed to tell one subgroup's "合計" from another's within the same group)
     leaf_exact / leaf_prefix: match against leaf label = first of r4, r3, r2 that is not None
     require_no_r4: reject columns whose leaf comes from a nested r4 sub-breakdown
         (needed to disambiguate a subgroup's own "合計" from the parent group's overall "合計")
     """
     r2_filled = forward_fill([m[0] for m in matrix])
+    r3_filled = forward_fill([m[1] for m in matrix])
     candidates = []
     for i, m in enumerate(matrix):
         r2, r3, r4 = m[0], m[1], m[2] if len(m) > 2 else None
@@ -98,6 +108,10 @@ def find_column(
         group = r2_filled[i]
         if group_prefix is not None:
             if group is None or not group.startswith(group_prefix):
+                continue
+        if sub_prefix is not None:
+            sub = r3_filled[i]
+            if sub is None or not sub.startswith(sub_prefix):
                 continue
         if group_exclude is not None:
             if group and group_exclude in group:
@@ -243,8 +257,16 @@ def parse_cost_sheet(ws):
     col = {
         "pref_name": find_column(matrix, leaf_exact="都道府県名"),
         "city_code": find_column(matrix, leaf_exact="地方公共団体コード"),
+        # ごみ分の歳出総額（建設改良費＋処理及び維持管理費＋その他）
         "waste_expenditure_thousand_yen": find_column(
             matrix, group_prefix="ごみ（建設改良費", leaf_exact="合計", require_no_r4=True
+        ),
+        # その内訳。施設整備の年だけ原価が跳ね上がるため、両者を分けて保持する。
+        "construction_expenditure_thousand_yen": find_column(
+            matrix, group_prefix="ごみ（建設改良費", sub_prefix="建設改良費", leaf_exact="合計"
+        ),
+        "operating_expenditure_thousand_yen": find_column(
+            matrix, group_prefix="ごみ（建設改良費", sub_prefix="処理及び維持管理費", leaf_exact="合計"
         ),
     }
     missing = [k for k, v in col.items() if v is None]
@@ -260,7 +282,26 @@ def parse_cost_sheet(ws):
         records[pref_code] = {
             "pref_name": _norm(row[col["pref_name"]]),
             "waste_expenditure_thousand_yen": to_number(row[col["waste_expenditure_thousand_yen"]]),
+            "construction_expenditure_thousand_yen": to_number(
+                row[col["construction_expenditure_thousand_yen"]]
+            ),
+            "operating_expenditure_thousand_yen": to_number(
+                row[col["operating_expenditure_thousand_yen"]]
+            ),
         }
+
+    # 内訳（建設改良費・処理及び維持管理費）は必ず総額の一部分になる。列の解決を
+    # 誤ると内訳が総額を超えるので、レイアウトが変わったときにここで気付ける。
+    for pref_code, rec in records.items():
+        total = rec["waste_expenditure_thousand_yen"]
+        parts = [rec["construction_expenditure_thousand_yen"], rec["operating_expenditure_thousand_yen"]]
+        if total is None or any(p is None for p in parts):
+            continue
+        if sum(parts) > total + 1:
+            raise RuntimeError(
+                f"cost: 内訳が総額を超えています（列の解決ミスの可能性） pref={pref_code} "
+                f"建設={parts[0]} 運営={parts[1]} 合計={total}"
+            )
     return records
 
 
@@ -272,49 +313,62 @@ def load_cost_year(year: str):
     return records
 
 
+# 歳出の3区分のうち、原価に換算して保持するもの。建設改良費は施設を建て替えた
+# 年度にだけ集中して計上されるため、合計原価だけを見ると「その年に工事をしていた
+# か」で順位が入れ替わってしまう。運営費（処理及び維持管理費）を分けて持つことで、
+# 日々の運営にかかるコストだけを年度またぎで比較できるようにする。
+COST_BREAKDOWN = [
+    ("waste_expenditure_thousand_yen", "cost_per_ton_yen"),
+    ("construction_expenditure_thousand_yen", "construction_cost_per_ton_yen"),
+    ("operating_expenditure_thousand_yen", "operating_cost_per_ton_yen"),
+]
+
+
 def build_cost_metrics(conn):
     """Merge per-prefecture waste expenditure into pref_stats and derive 処理原価
-    (cost per tonne treated). Runs after build_pref_stats() so treated_amount_t is
-    already populated for every fiscal_year/pref_code."""
+    (cost per tonne treated), both in total and split into 建設改良費 / 運営費.
+    Runs after build_pref_stats() so treated_amount_t is already populated for
+    every fiscal_year/pref_code."""
     cur = conn.cursor()
 
-    all_period_expenditure: dict[str, float] = {}
+    exp_cols = [e for e, _ in COST_BREAKDOWN]
+    rate_cols = [r for _, r in COST_BREAKDOWN]
+    set_clause = ", ".join(f"{c} = ?" for c in exp_cols + rate_cols)
+
+    all_period_expenditure: dict[str, dict[str, float]] = {}
     all_period_treated: dict[str, float] = {}
 
     for year in COST_FISCAL_YEARS:
         cost = load_cost_year(year)
         for pref_code, rec in cost.items():
-            exp = rec["waste_expenditure_thousand_yen"]
-            if exp is None:
+            if rec["waste_expenditure_thousand_yen"] is None:
                 continue
             row = cur.execute(
                 "SELECT treated_amount_t FROM pref_stats WHERE fiscal_year = ? AND pref_code = ?",
                 (year, pref_code),
             ).fetchone()
             treated = row[0] if row else None
-            cost_per_ton = (exp * 1000 / treated) if treated else None
+
+            exps = [rec[c] for c in exp_cols]
+            rates = [(e * 1000 / treated) if (e is not None and treated) else None for e in exps]
             cur.execute(
-                """
-                UPDATE pref_stats
-                SET waste_expenditure_thousand_yen = ?, cost_per_ton_yen = ?
-                WHERE fiscal_year = ? AND pref_code = ?
-                """,
-                (exp, cost_per_ton, year, pref_code),
+                f"UPDATE pref_stats SET {set_clause} WHERE fiscal_year = ? AND pref_code = ?",
+                (*exps, *rates, year, pref_code),
             )
-            all_period_expenditure[pref_code] = all_period_expenditure.get(pref_code, 0.0) + exp
+
+            sums = all_period_expenditure.setdefault(pref_code, {c: 0.0 for c in exp_cols})
+            for c, e in zip(exp_cols, exps):
+                sums[c] += e or 0.0
             if treated:
                 all_period_treated[pref_code] = all_period_treated.get(pref_code, 0.0) + treated
 
-    for pref_code, exp_sum in all_period_expenditure.items():
+    for pref_code, sums in all_period_expenditure.items():
         treated_sum = all_period_treated.get(pref_code)
-        cost_per_ton = (exp_sum * 1000 / treated_sum) if treated_sum else None
+        exps = [sums[c] for c in exp_cols]
+        rates = [(e * 1000 / treated_sum) if treated_sum else None for e in exps]
         cur.execute(
-            """
-            UPDATE pref_stats
-            SET waste_expenditure_thousand_yen = ?, cost_per_ton_yen = ?
-            WHERE fiscal_year = 'ALL' AND pref_code = ?
-            """,
-            (exp_sum, cost_per_ton, pref_code),
+            f"UPDATE pref_stats SET {set_clause} WHERE fiscal_year = 'ALL' AND pref_code = ?",
+            (*exps, *rates, pref_code),
         )
     conn.commit()
 
@@ -365,6 +419,10 @@ CREATE TABLE pref_stats (
     final_disposal_rate_pct REAL,
     waste_expenditure_thousand_yen REAL,
     cost_per_ton_yen REAL,
+    construction_expenditure_thousand_yen REAL,
+    construction_cost_per_ton_yen REAL,
+    operating_expenditure_thousand_yen REAL,
+    operating_cost_per_ton_yen REAL,
     PRIMARY KEY (fiscal_year, pref_code)
 );
 

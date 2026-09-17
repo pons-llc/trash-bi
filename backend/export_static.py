@@ -36,7 +36,8 @@ PREF_COLUMNS = """
     treated_amount_t, final_disposal_t,
     per_capita_total_g, per_capita_household_g, per_capita_business_g,
     recycling_rate_r_pct, final_disposal_rate_pct,
-    cost_per_ton_yen, waste_expenditure_thousand_yen
+    cost_per_ton_yen, waste_expenditure_thousand_yen,
+    construction_cost_per_ton_yen, operating_cost_per_ton_yen
 """
 
 CITY_COLUMNS = """
@@ -52,7 +53,8 @@ PREF_TREND_COLUMNS = """
     fiscal_year, population, total_waste_t, household_waste_t, business_waste_t,
     treated_amount_t, final_disposal_t, per_capita_total_g, per_capita_household_g,
     per_capita_business_g, recycling_rate_r_pct, final_disposal_rate_pct,
-    cost_per_ton_yen, waste_expenditure_thousand_yen
+    cost_per_ton_yen, waste_expenditure_thousand_yen,
+    construction_cost_per_ton_yen, operating_cost_per_ton_yen
 """
 
 CITY_TREND_COLUMNS = """

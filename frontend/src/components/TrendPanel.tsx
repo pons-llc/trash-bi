@@ -18,6 +18,9 @@ const SERIES_LABEL: Record<string, string> = {
   total_waste_t: '合計',
   household_waste_t: '生活系',
   business_waste_t: '事業系',
+  cost_per_ton_yen: '合計',
+  operating_cost_per_ton_yen: '運営費',
+  construction_cost_per_ton_yen: '建設改良費',
 }
 
 function tonnesTick(v: number) {
@@ -175,20 +178,44 @@ export default function TrendPanel({ data, loading, onClose, shareInfo }: Props)
                     width={48}
                   />
                   <Tooltip
-                    formatter={(value) => [`${Math.round(Number(value)).toLocaleString('ja-JP')} 円/t`, '処理原価']}
+                    formatter={(value, name) => [
+                      `${Math.round(Number(value)).toLocaleString('ja-JP')} 円/t`,
+                      SERIES_LABEL[String(name)] ?? String(name),
+                    ]}
                     labelFormatter={(v) => `${YEAR_LABEL[String(v)] ?? v} 年度`}
+                  />
+                  <Legend
+                    formatter={(value) => SERIES_LABEL[String(value)] ?? String(value)}
+                    wrapperStyle={{ fontSize: 12 }}
                   />
                   <Line
                     type="monotone"
                     dataKey="cost_per_ton_yen"
+                    stroke="var(--series-total)"
+                    strokeWidth={2}
+                    dot={{ r: 3 }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="operating_cost_per_ton_yen"
+                    stroke="var(--series-household)"
+                    strokeWidth={2}
+                    dot={{ r: 3 }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="construction_cost_per_ton_yen"
                     stroke="var(--series-business)"
                     strokeWidth={2}
                     dot={{ r: 3 }}
-                    name="処理原価"
                   />
                 </LineChart>
               </ResponsiveContainer>
-              <p className="trend-note">※ R5はコストデータが未収録のため欠損</p>
+              <p className="trend-note">
+                ※ 合計には清掃工場などの建設改良費が含まれます。施設を建て替えた年度だけ跳ね上がるため、
+                年度をまたいだ比較には運営費のほうが素直に読めます。詳しくは
+                <a href="/articles/waste-cost-construction-spike"> こちらの記事</a>で解説しています。
+              </p>
             </div>
           )}
         </div>
