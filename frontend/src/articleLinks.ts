@@ -84,6 +84,36 @@ export const CITY_ARTICLES: Record<string, ArticleLink> = {
     title: '過疎地なのにごみが多い3つの町、理由は三者三様だった',
     hook: '離島特有の事情から、生活系ごみが主体の高い排出量が続いています。',
   },
+  '07213': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '避難区域に隣接する自治体の一つ。近年は排出量の「正常化」傾向も見られます。',
+  },
+  '07301': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '避難区域に隣接する自治体の一つ。近年は排出量の「正常化」傾向も見られます。',
+  },
+  '07303': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '避難区域に隣接する自治体の一つ。6年間ほとんど排出量が変わっていません。',
+  },
+  '07308': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '町内の山木屋地区がかつて避難指示区域だった町です。',
+  },
+  '07212': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '市域の一部が避難区域指定を受けた自治体の一つです。',
+  },
+  '07203': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '避難区域から離れた大都市でも、排出量は県内トップクラスです。',
+  },
 }
 
 export const PREF_ARTICLES: Record<string, ArticleLink> = {
@@ -121,6 +151,11 @@ export const PREF_ARTICLES: Record<string, ArticleLink> = {
     slug: 'recycling-rate-final-disposal-myth',
     title: 'リサイクル率が高い県ほどごみが減るとは限らない、というデータの話',
     hook: 'リサイクル率は平均以上でも、最終処分率は全国最悪という例外です。',
+  },
+  '07': {
+    slug: 'fukushima-prefecture-highest-waste',
+    title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
+    hook: '1人1日排出量が全国1位。ただし2位の富山県とは僅差です。',
   },
 }
 

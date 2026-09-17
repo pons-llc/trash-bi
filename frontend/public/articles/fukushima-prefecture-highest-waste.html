@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="福島県の1人1日あたりごみ排出量は1,039.7gで全国1位。ただし2位の富山県とは僅差で、東北・北陸・山陰の複数県が僅差で並ぶ全国的な傾向でもあります。県内で見ると、避難区域に隣接し復興・除染関連の活動が集中した自治体が上位を占める一方、避難区域そのものの町は排出量がほぼ消えているという対照的な構図が見えてきます。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/fukushima-prefecture-highest-waste" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図" />
+    <meta property="og:description" content="福島県が1人1日排出量で全国1位になった背景を、県内自治体別データと避難区域周辺の推移から検証する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/fukushima-prefecture-highest-waste" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ponsllc" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図",
+        "description": "福島県の1人1日あたりごみ排出量が全国1位になった背景を、東北他県との比較・県内自治体別の内訳・避難区域周辺自治体の推移から検証する。",
+        "datePublished": "2026-09-16",
+        "dateModified": "2026-09-16",
+        "author": { "@type": "Organization", "name": "pons-llc" },
+        "publisher": { "@type": "Organization", "name": "pons-llc" },
+        "image": "https://trash-bi.pons-llc.com/ogp.png",
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/fukushima-prefecture-highest-waste"
+      }
+    </script>
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
+        --color-accent-orange: #c74700;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--color-primary);
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--color-text-muted);
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 25px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 40px 0 14px;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 10px;
+      }
+      p {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      p strong {
+        color: var(--color-text);
+      }
+      .lead {
+        font-size: 16px;
+        color: var(--color-text);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .stat-box {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+      .stat-box .num.muted {
+        color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
+      }
+      .stat-box .label {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+      caption {
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 6px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 6px;
+        text-align: right;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .callout {
+        background: var(--color-primary-surface);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--color-text);
+      }
+      .callout strong {
+        color: var(--color-primary);
+      }
+      .caveat {
+        border: 1px dashed var(--color-border);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 24px 0;
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .cta-band {
+        background: var(--color-bg);
+        border-radius: 12px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 48px 0 0;
+      }
+      .cta-band p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .cta-band .cta-btn {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 28px;
+      }
+
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 32px;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        color: var(--color-text-muted);
+        text-decoration: underline;
+      }
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <article>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 福島県のごみ排出量が全国一位の理由</p>
+      <span class="kicker">データ深掘り</span>
+      <h1>なぜ福島県のごみ排出量は全国一位なのか<br />避難区域の「隣」に見える構図</h1>
+      <p class="meta">公開日：2026年9月16日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
+
+      <div class="share-widget">
+        <span class="share-label">シェア</span>
+        <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+        <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+        <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+      <script>
+        ;(function () {
+          var shareText = '福島県の1人1日ごみ排出量は全国1位。でも僅差の2位は富山県。県内を見ると避難区域の「隣」の町が軒並み上位という構図が'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/fukushima-prefecture-highest-waste'
+          document.getElementById('share-x').href =
+            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+          document.getElementById('share-line').href =
+            'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+          document.getElementById('share-copy').addEventListener('click', function () {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              var btn = document.getElementById('share-copy')
+              btn.textContent = 'コピーしました'
+              setTimeout(function () {
+                btn.textContent = 'リンクをコピー'
+              }, 2000)
+            })
+          })
+        })()
+      </script>
+
+      <p class="lead"><a href="/app/?level=pref&code=07&year=ALL&metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で都道府県別の「1人1日あたりごみ排出量」ランキングを見ると、福島県が<strong>1,039.7g</strong>で全国1位です。しかし2位の富山県（1,035.1g）とはわずか4.6gの僅差。実は東北・北陸・山陰の複数県が1,000g前後で団子状態に並んでおり、「福島県だけが突出している」わけではありません。それでも県内を市区町村別に見ていくと、この数字の背景にはこの県特有の、ある地理的なパターンが浮かび上がってきます。</p>
+
+      
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num muted">1,039.7g</div>
+          <div class="label">福島県 1人1日排出量（全国1位）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">1,035.1g</div>
+          <div class="label">2位 富山県（差はわずか4.6g）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num muted">712.5g</div>
+          <div class="label">福島県の生活系排出量（東北6県で最高）</div>
+        </div>
+      </div>
+
+      <h2>「福島県だけが多い」わけではない、という前提</h2>
+      <p>
+        まず押さえておきたいのは、都道府県別ランキングの上位が僅差の団子状態だという点です。福島県（1,039.7g）を筆頭に、
+        富山県（1,035.1g）・青森県（1,026.0g）・新潟県（1,022.8g）・秋田県（1,021.5g）と、5位までが20g弱の差にひしめいています。
+        東北・北陸・山陰・四国の rural な県が軒並み上位に並ぶ傾向があり、これは福島県固有というより、より広い地域的な
+        パターンの一部と見るべきでしょう（その要因はこのデータだけからは特定できません）。
+      </p>
+
+      <table>
+        <caption>
+          1人1日あたりごみ排出量 都道府県ランキング上位10（全期間合計、環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>順位</th>
+            <th>都道府県</th>
+            <th>排出量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1位</td><td>福島県</td><td>1,039.7g</td></tr>
+          <tr><td>2位</td><td>富山県</td><td>1,035.1g</td></tr>
+          <tr><td>3位</td><td>青森県</td><td>1,026.0g</td></tr>
+          <tr><td>4位</td><td>新潟県</td><td>1,022.8g</td></tr>
+          <tr><td>5位</td><td>秋田県</td><td>1,021.5g</td></tr>
+          <tr><td>6位</td><td>鳥取県</td><td>1,013.9g</td></tr>
+          <tr><td>7位</td><td>山口県</td><td>994.2g</td></tr>
+          <tr><td>8位</td><td>長崎県</td><td>980.5g</td></tr>
+          <tr><td>9位</td><td>群馬県</td><td>979.4g</td></tr>
+          <tr><td>10位</td><td>高知県</td><td>978.8g</td></tr>
+        </tbody>
+      </table>
+
+      <h2>それでも東北の中では、福島県が頭一つ抜けている</h2>
+      <p>
+        一方で、東北6県だけで比較すると福島県の高さは際立ちます。特に生活系（家庭からの）排出量を見ると、
+        福島県の712.5g/人日は、隣県の岩手県（617.2g）・山形県（617.9g）・宮城県（650.0g）を大きく上回り、
+        比較的近い青森県（681.6g）・秋田県（683.7g）と比べても30g前後高い水準です。
+        「東北だから多い」という説明だけでは、福島県の高さは説明しきれません。
+      </p>
+
+      <table>
+        <caption>
+          東北6県の1人1日排出量比較（全期間合計、環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>都道府県</th>
+            <th>合計</th>
+            <th>生活系</th>
+            <th>事業系</th>
+            <th>リサイクル率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>福島県</td><td>1,039.7g</td><td>712.5g</td><td>303.8g</td><td>13.1%</td></tr>
+          <tr><td>青森県</td><td>1,026.0g</td><td>681.6g</td><td>325.1g</td><td>13.5%</td></tr>
+          <tr><td>秋田県</td><td>1,021.5g</td><td>683.7g</td><td>327.8g</td><td>14.3%</td></tr>
+          <tr><td>宮城県</td><td>976.1g</td><td>650.0g</td><td>292.3g</td><td>15.4%</td></tr>
+          <tr><td>岩手県</td><td>932.6g</td><td>617.2g</td><td>283.7g</td><td>16.9%</td></tr>
+          <tr><td>山形県</td><td>928.4g</td><td>617.9g</td><td>272.4g</td><td>13.5%</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        リサイクル率も東北で最下位（13.1%）、最終処分率は11.7%と都道府県平均（9.0%）より高く、
+        「多く出して、資源化率も低く、埋め立ても多い」という三重の状態にあることが分かります。
+      </p>
+
+      <h2>県内を見ると、避難区域の「隣」が上位を占める</h2>
+      <p>
+        では県内のどこが押し上げているのか。人口3,000人以上の市町村で1人1日排出量トップ15を見ると、
+        磐梯町・川俣町・桑折町・国見町・伊達市・南相馬市・広野町など、東京電力福島第一原発事故の
+        避難区域に隣接し、避難者の受け入れや除染・復興工事が集中した地域が上位に集まっています。
+        中でも川俣町は、町内の山木屋地区がかつて避難指示区域に指定されていた地域そのものです。
+      </p>
+
+      <table>
+        <caption>
+          福島県内 1人1日排出量トップ8（人口3,000人以上、全期間合計、環境省データより）
+        </caption>
+        <thead>
+          <tr>
+            <th>自治体</th>
+            <th>人口</th>
+            <th>1人1日排出量</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>磐梯町</td><td>3,149人</td><td>1,296.0g</td><td>—</td></tr>
+          <tr><td>川俣町</td><td>11,484人</td><td>1,263.5g</td><td>山木屋地区が避難指示区域だった</td></tr>
+          <tr><td>桑折町</td><td>10,997人</td><td>1,212.2g</td><td>避難区域に隣接する県北地域</td></tr>
+          <tr><td>国見町</td><td>8,114人</td><td>1,196.2g</td><td>同上</td></tr>
+          <tr><td>伊達市</td><td>56,149人</td><td>1,171.0g</td><td>同上、除染対象地域を含む</td></tr>
+          <tr><td>猪苗代町</td><td>12,595人</td><td>1,155.2g</td><td>—</td></tr>
+          <tr><td>郡山市</td><td>312,965人</td><td>1,150.1g</td><td>県内2番目の人口規模の都市</td></tr>
+          <tr><td>南相馬市</td><td>56,011人</td><td>1,141.1g</td><td>市域の一部が避難区域指定を受けた</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        これは<a href="/articles/fukushima-return-zone-waste">以前の記事</a>で紹介した双葉町・大熊町とは対照的な構図です。
+        避難区域そのものだった町では住民登録人口に対して実際の居住者が少なく、排出量がほぼ消えていました。
+        一方で、その避難者を受け入れ、復興・除染関連の活動の拠点となった周辺自治体では、排出量が押し上げられている
+        ように見えます。ごみが「消えた」場所と「集中した」場所が、地理的に隣り合っているのです。
+      </p>
+
+      <h2>推移で見ると、一部の町では「正常化」が進んでいる</h2>
+      <p>
+        令和元〜6年度の推移を見ると、伊達市（1,291.7g→1,049.1g、-18.8%）・桑折町（1,290.0g→1,039.1g、-19.5%）・
+        広野町（1,177.8g→995.3g、-15.5%）は、県内の主要都市（いわき市-8.8%、郡山市-8.7%など）よりも
+        明確に大きな下落幅を見せています。復興・除染関連の活動が落ち着くにつれて、排出量も徐々に「正常化」している
+        可能性がうかがえます。
+      </p>
+      <p>
+        ただし、この傾向がすべての自治体に当てはまるわけではありません。川俣町（1,227.4g→1,215.3g、-1.0%）や
+        国見町（1,118.6g→1,092.3g、-2.3%）は、6年間を通じてほとんど変化していません。震災から10年以上が経過した
+        今も高い水準のまま推移している自治体があることも事実です。
+      </p>
+
+      <div class="callout">
+        <strong>数字が示していること、示していないこと</strong>
+        ：避難区域に隣接する自治体で排出量が高く、一部は近年下落傾向にある——ここまではデータから読み取れます。
+        しかし、その具体的な内訳（解体廃棄物なのか、帰還にともなう片付けごみなのか、他の要因なのか）は
+        この統計だけでは分かりません。また、除染にともなって発生する土壌などは「除去土壌等」として別枠で管理されており、
+        本サイトが扱う一般廃棄物の統計には含まれていません。
+      </div>
+
+      <div class="caveat">
+        東北・北陸・山陰の複数県がそろって上位に並ぶ理由（世帯構成、住宅の形態、収集体制の違いなど）も、
+        本サイトのデータだけでは特定できません。福島県内の地域差についても、避難区域周辺という地理的な
+        相関から導いた仮説であり、断定するものではない点にご留意ください。
+      </div>
+
+      <h2>この事例から学べること</h2>
+      <p>
+        都道府県ランキングの「1位」という数字だけを見ると、その県固有の際立った特徴のように感じられます。
+        しかし実際には、僅差の団子状態の中の1位だったり、より広い地域的な傾向の一部だったりすることが少なくありません。
+        さらに県内を市区町村単位まで掘り下げることで、数字を押し上げている具体的な地域と、
+        その背景にある社会的な出来事が見えてくることがあります。
+      </p>
+      <p>
+        本サイトのダッシュボードでは、都道府県内の市区町村を一覧・地図で比較できます。全国順位だけでなく、
+        県内でどこが数字を動かしているかも、ぜひ確認してみてください。
+      </p>
+
+
+      <div class="cta-band">
+        <p>福島県内の市区町村別データを、地図とランキングで詳しく見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=pref&code=07&year=ALL&metric=per_capita_total_g">ダッシュボードで確認する →</a>
+      </div>
+    </article>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/articles/">読み物一覧</a> ・ <a href="/terms">利用規約</a> ・
+          <a href="/privacy">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
