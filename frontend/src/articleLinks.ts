@@ -114,6 +114,37 @@ export const CITY_ARTICLES: Record<string, ArticleLink> = {
     title: 'なぜ福島県のごみ排出量は全国一位なのか——避難区域の「隣」に見える構図',
     hook: '避難区域から離れた大都市でも、排出量は県内トップクラスです。',
   },
+
+  '20205': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '飯田市を含む南信州地域は、県内でも特に排出量が低い地域です。',
+  },
+  '20403': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '全国の排出量下位50市区町村に入る、長野県内でも最少クラスの町です。',
+  },
+  '20402': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '隣接する下伊那郡の町村とそろって低い水準が続いています。',
+  },
+  '20411': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '下伊那郡の町村は軒並み全国最少クラスに位置しています。',
+  },
+  '20414': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '全国1,719市区町村の中でも最少クラスの排出量です。',
+  },
+  '20209': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '上伊那地域も県内で排出量が低い地域のひとつです。',
+  },
 }
 
 export const PREF_ARTICLES: Record<string, ArticleLink> = {
@@ -123,19 +154,49 @@ export const PREF_ARTICLES: Record<string, ArticleLink> = {
     hook: '県内のほぼ全市町で同時に起きたリサイクル率急落の謎を追います。',
   },
   '29': {
-    slug: 'waste-cost-per-ton-nara-tokyo',
-    title: 'ごみ処理費、東京は高くて当然？奈良・島根がトップという逆転現象',
-    hook: '全国で最もごみ処理原価が高いのは、実はこの県です。',
+    slug: 'waste-cost-construction-spike',
+    title: 'ごみ処理原価「全国1位」の6割は建設費だった',
+    hook: '処理原価が全国1位。ただし内訳の58.9%は清掃工場の建設改良費です。',
   },
   '32': {
-    slug: 'waste-cost-per-ton-nara-tokyo',
-    title: 'ごみ処理費、東京は高くて当然？奈良・島根がトップという逆転現象',
-    hook: '奈良県に次いで全国2位の処理原価の高さを記録しています。',
+    slug: 'waste-cost-construction-spike',
+    title: 'ごみ処理原価「全国1位」の6割は建設費だった',
+    hook: '令和3年度に原価135,481円を記録し、2年後には半減しています。',
+  },
+  '47': {
+    slug: 'waste-cost-construction-spike',
+    title: 'ごみ処理原価「全国1位」の6割は建設費だった',
+    hook: '処理原価が1年で69%上昇。建設改良費が3.5倍になったためです。',
+  },
+  '42': {
+    slug: 'waste-cost-construction-spike',
+    title: 'ごみ処理原価「全国1位」の6割は建設費だった',
+    hook: '6年間の最初と最後の両方で施設の建設期に当たっている県です。',
+  },
+  '20': {
+    slug: 'nagano-lowest-household-waste',
+    title: '長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県',
+    hook: '全国の排出量下位50市区町村のうち、24団体がこの県です。',
   },
   '13': {
-    slug: 'waste-cost-per-ton-nara-tokyo',
-    title: 'ごみ処理費、東京は高くて当然？奈良・島根がトップという逆転現象',
-    hook: '大都市ゆえに高コストと思いきや、それを上回る県が存在します。',
+    slug: 'urban-rural-waste-per-capita',
+    title: '東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由',
+    hook: '1人1日排出量は47都道府県中43位。人口集中地域ほど少なくなります。',
+  },
+  '14': {
+    slug: 'urban-rural-waste-per-capita',
+    title: '東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由',
+    hook: '1人1日排出量は753gで全国45位。生活系の少なさが効いています。',
+  },
+  '11': {
+    slug: 'urban-rural-waste-per-capita',
+    title: '東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由',
+    hook: '事業系の1人あたり排出量が全国で最も少ない県です。',
+  },
+  '10': {
+    slug: 'urban-rural-waste-per-capita',
+    title: '東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由',
+    hook: '生活系の1人1日排出量が672gで全国最多。北関東に共通の傾向です。',
   },
   '16': {
     slug: 'waste-cost-per-ton-nara-tokyo',

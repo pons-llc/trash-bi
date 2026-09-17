@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="令和6年度の1人1日あたりごみ排出量で、東京都は47都道府県中43位、神奈川県は45位。人口が集中する地域ほど1人あたりの排出量が少ないという逆転が起きています。市区町村を人口規模別に束ねると、差を作っているのは事業系ではなく生活系のごみであることが分かります。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/urban-rural-waste-per-capita" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由" />
+    <meta property="og:description" content="1人1日あたりで見ると東京都は47都道府県中43位。大都市圏ほど排出量が少ない逆転の構造を、人口規模別の集計から読み解く。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/urban-rural-waste-per-capita" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ponsllc" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "東京はごみが少ない——1人あたりで見ると大都市圏が下位に並ぶ理由",
+        "description": "令和6年度の一般廃棄物データをもとに、人口規模の大きい自治体ほど1人1日あたりごみ排出量が少ない理由を、生活系・事業系の内訳から検証する。",
+        "datePublished": "2026-09-17",
+        "dateModified": "2026-09-17",
+        "author": { "@type": "Organization", "name": "pons-llc" },
+        "publisher": { "@type": "Organization", "name": "pons-llc" },
+        "image": "https://trash-bi.pons-llc.com/ogp.png",
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/urban-rural-waste-per-capita"
+      }
+    </script>
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
+        --color-accent-orange: #c74700;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--color-primary);
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--color-text-muted);
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 25px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 40px 0 14px;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 10px;
+      }
+      p {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      p strong {
+        color: var(--color-text);
+      }
+      .lead {
+        font-size: 16px;
+        color: var(--color-text);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .stat-box {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+      .stat-box .num.muted {
+        color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
+      }
+      .stat-box .label {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+      caption {
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 6px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 6px;
+        text-align: right;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .callout {
+        background: var(--color-primary-surface);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--color-text);
+      }
+      .callout strong {
+        color: var(--color-primary);
+      }
+      .caveat {
+        border: 1px dashed var(--color-border);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 24px 0;
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .cta-band {
+        background: var(--color-bg);
+        border-radius: 12px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 48px 0 0;
+      }
+      .cta-band p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .cta-band .cta-btn {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 28px;
+      }
+
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 32px;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        color: var(--color-text-muted);
+        text-decoration: underline;
+      }
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <article>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 大都市圏ほど1人あたりごみが少ない理由</p>
+      <span class="kicker">データ深掘り</span>
+      <h1>東京はごみが少ない<br />1人あたりで見ると大都市圏が下位に並ぶ理由</h1>
+      <p class="meta">公開日：2026年9月17日／出典：環境省 一般廃棄物処理事業実態調査（令和6年度）</p>
+
+      <div class="share-widget">
+        <span class="share-label">シェア</span>
+        <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+        <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+        <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+      <script>
+        ;(function () {
+          var shareText = '1人1日あたりのごみ排出量、東京都は47都道府県中43位。大都市圏ほど少ないという逆転が起きていて、差を作っているのは事業系ではなく家庭のごみでした'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/urban-rural-waste-per-capita'
+          document.getElementById('share-x').href =
+            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+          document.getElementById('share-line').href =
+            'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+          document.getElementById('share-copy').addEventListener('click', function () {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              var btn = document.getElementById('share-copy')
+              btn.textContent = 'コピーしました'
+              setTimeout(function () {
+                btn.textContent = 'リンクをコピー'
+              }, 2000)
+            })
+          })
+        })()
+      </script>
+
+      <p class="lead"><a href="/app/?level=pref&amp;code=13&amp;year=R6&amp;metric=per_capita_total_g">日本ごみ処理ダッシュボード</a>で令和6年度の「1人1日あたりごみ排出量」を都道府県別に並べると、東京都は<strong>781g</strong>で47都道府県中43位。神奈川県は753gで45位、埼玉県は781gで42位です。人口が集中し、コンビニもオフィスも飲食店も密集している地域が、なぜ全国で最も「ごみを出さない」側に並ぶのでしょうか。データを市区町村単位まで下ろしていくと、この逆転にはかなりはっきりした構造が見えてきます。</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num green">781g</div>
+          <div class="label">東京都 1人1日排出量（47都道府県中43位）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num muted">953g</div>
+          <div class="label">福島県（全国1位）との差は172g</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">839g</div>
+          <div class="label">全国平均（令和6年度）</div>
+        </div>
+      </div>
+
+      <h2>人口の多い都道府県ほど、1人あたりの排出量は少ない</h2>
+      <p>
+        まず都道府県レベルで確認します。人口上位10都道府県のうち、1人1日排出量が全国平均（839g）を上回るのは
+        大阪府・福岡県・北海道の3つだけ。残る7都県はすべて平均以下で、しかも東京・神奈川・埼玉・愛知・静岡は
+        下位10位圏に入っています。
+      </p>
+
+      <table>
+        <caption>人口上位10都道府県の1人1日排出量と全国順位（令和6年度、多い順の順位）</caption>
+        <thead>
+          <tr><th>都道府県</th><th>人口</th><th>1人1日排出量</th><th>全国順位</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>東京都</td><td>1,400万人</td><td>781g</td><td>43位</td></tr>
+          <tr><td>神奈川県</td><td>922万人</td><td>753g</td><td>45位</td></tr>
+          <tr><td>大阪府</td><td>879万人</td><td>864g</td><td>27位</td></tr>
+          <tr><td>愛知県</td><td>748万人</td><td>813g</td><td>39位</td></tr>
+          <tr><td>埼玉県</td><td>738万人</td><td>781g</td><td>42位</td></tr>
+          <tr><td>千葉県</td><td>631万人</td><td>827g</td><td>34位</td></tr>
+          <tr><td>兵庫県</td><td>539万人</td><td>834g</td><td>32位</td></tr>
+          <tr><td>福岡県</td><td>514万人</td><td>873g</td><td>23位</td></tr>
+          <tr><td>北海道</td><td>506万人</td><td>900g</td><td>16位</td></tr>
+          <tr><td>静岡県</td><td>358万人</td><td>791g</td><td>41位</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        三大都市圏の9都府県（埼玉・千葉・東京・神奈川・愛知・三重・京都・大阪・兵庫）とそれ以外の38道県に分けると、
+        人口はほぼ半々（6,241万人対6,210万人）にもかかわらず、1人1日排出量は<strong>801g対877g</strong>。
+        76gの差がつきます。
+      </p>
+
+      <h2>内訳を見ると、差はすべて「生活系」から出ている</h2>
+      <p>
+        この差がどこから来るのかは、生活系（家庭から出るごみ）と事業系（事業所から出て市区町村が処理するごみ）に
+        分けると一目で分かります。全国1,748市区町村を人口規模別に束ねて、それぞれ人口加重平均を取ってみました。
+      </p>
+
+      <table>
+        <caption>市区町村の人口規模別 1人1日排出量（令和6年度、人口加重平均）</caption>
+        <thead>
+          <tr><th>人口規模</th><th>団体数</th><th>合計</th><th>生活系</th><th>事業系</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>5千人未満</td><td>303</td><td>904g</td><td>697g</td><td>207g</td></tr>
+          <tr><td>5千〜2万人</td><td>526</td><td>874g</td><td>641g</td><td>233g</td></tr>
+          <tr><td>2万〜5万人</td><td>399</td><td>861g</td><td>620g</td><td>241g</td></tr>
+          <tr><td>5万〜10万人</td><td>235</td><td>836g</td><td>596g</td><td>239g</td></tr>
+          <tr><td>10万〜30万人</td><td>184</td><td>839g</td><td>590g</td><td>249g</td></tr>
+          <tr><td>30万人以上</td><td>72</td><td>830g</td><td>554g</td><td>276g</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        生活系は人口規模が上がるにつれて<strong>697g→554g</strong>とほぼ一直線に下がり、逆に事業系は
+        <strong>207g→276g</strong>と上がっていきます。合計の差（904g→830g、74g）は、生活系の差（143g）が
+        事業系の差（-69g）に一部打ち消された結果です。つまり<strong>都市と地方の排出量の差を作っているのは、
+        事業活動ではなく家庭のほう</strong>だということになります。
+      </p>
+
+      <div class="callout">
+        <strong>直感に反するポイント</strong>
+        ：「都会はコンビニも飲食店も多いからごみが多いはず」という感覚は、事業系の列だけを見れば正しい方向です。
+        しかしその増分は、生活系の減り幅に及びません。都市の密度が生む事業系ごみよりも、
+        都市の住まい方が減らす生活系ごみのほうが大きい、という構図になっています。
+      </div>
+
+      <h2>「地方のほうが多い」は自家処理では説明できない</h2>
+      <p>
+        ここでよくある反論が「地方では庭で燃やしたり畑に埋めたりして統計に乗らない分があるはずだ」というものです。
+        実態調査にはこの自家処理量の項目があるので、確認できます。
+      </p>
+      <p>
+        令和6年度の自家処理量を1人1日あたりに換算すると、最も多い徳島県で<strong>1.9g</strong>、次いで長野県1.8g、
+        熊本県1.6g。ほとんどの都府県は0gです。都道府県間の170g以上の差に対して、自家処理は誤差の範囲でしかありません。
+        「田舎は統計外で処理している」という説明は、少なくともこの数字のスケールでは成り立たないことになります。
+      </p>
+
+      <h2>では、何が生活系の差を作っているのか</h2>
+      <p>
+        生活系の多い県を並べると、群馬県672g・茨城県650g・徳島県645g・福島県645g・高知県642g・山梨県635g。
+        少ない側は京都府419g・大阪府457g・広島県498g・長野県499g・鳥取県511g・神奈川県512gです。
+        上位に北関東が固まり、下位に大都市圏が並ぶ構図が見て取れます。
+      </p>
+      <p>
+        このデータだけで要因を特定することはできませんが、統計と整合する仮説はいくつか立てられます。
+      </p>
+      <p>
+        ひとつは<strong>住宅の形態と敷地</strong>です。戸建てが多く敷地の広い地域では、庭木の剪定枝・刈草・落ち葉が
+        可燃ごみとして継続的に出ます。集合住宅が中心の都市部には、この排出源がそもそも存在しません。
+        生活系上位に北関東・東北・四国の県が並ぶことは、この説明とよく整合します。
+      </p>
+      <p>
+        もうひとつは<strong>買い物の仕方</strong>です。公共交通で持ち帰る都市生活では、1回に買える量が物理的に
+        制限されます。車で郊外の大型店にまとめ買いをする生活は、単純に家庭に入ってくる物量——そして容器包装の量——が
+        多くなります。粗大ごみも、車で持ち込める環境のほうが出しやすいでしょう。
+      </p>
+      <p>
+        いずれも「都市の住民のほうが環境意識が高い」という話ではない、という点が重要です。
+        住まいの形と移動手段という、個人の心がけとは別の層で決まっている部分が大きいと考えられます。
+      </p>
+
+      <h2>事業系の県別ランキングは「発生量」ではなく「処理ルート」を見ている可能性</h2>
+      <p>
+        ここまでと逆方向の注意点もあります。事業系の1人1日排出量を県別に並べると、上位は鳥取県409g・岡山県369g・
+        大阪府368g・石川県338g。一方で最下位圏は<strong>埼玉県180g・神奈川県183g・東京都195g</strong>です。
+      </p>
+      <p>
+        東京や神奈川に事業所が少ないということはあり得ません。この統計が拾っているのは
+        「<strong>市区町村が処理した</strong>事業系ごみ」だからです。大都市では大規模ビルやチェーン店のごみが
+        許可業者を経由して民間の処理施設に流れ、市区町村の処理量に計上されない分があります。
+        逆に地方では、小規模事業者のごみがそのまま市区町村の焼却施設に入ります。
+      </p>
+      <p>
+        つまり事業系の県別順位は、事業活動の活発さというより、<strong>民間処理と自治体処理の分担の違い</strong>を
+        映している可能性が高い。ダッシュボードで区分を「事業系」に切り替えて見るときは、この点を頭に入れておくと
+        誤読を避けられます。
+      </p>
+
+      <div class="caveat">
+        本記事の数値はすべて環境省「一般廃棄物処理事業実態調査」令和6年度の公表値にもとづく集計です。
+        人口規模別の集計は、人口が判明し1人1日排出量が公表されている市区町村を対象に、人口で加重平均したものです。
+        生活系の地域差の要因（住宅形態・買い物行動）は、統計と矛盾しない仮説として挙げたものであり、
+        本データから因果関係を立証したものではありません。事業系の処理ルートに関する記述も同様です。
+      </div>
+
+      <h2>ランキングの見方が変わる</h2>
+      <p>
+        1人1日排出量のランキングは、しばしば自治体の努力の通信簿のように読まれます。しかし実際には、
+        住宅がどう建っているか、住民がどう買い物をしているか、事業者のごみがどのルートを通るかといった、
+        自治体の施策より手前にある条件がかなりの部分を決めています。
+      </p>
+      <p>
+        とはいえ、条件で全部が決まるわけでもありません。同じ地方部でも大きく低い水準を保っている県は存在します。
+        その代表例が長野県で、<a href="/articles/nagano-lowest-household-waste">別の記事</a>で詳しく取り上げています。
+      </p>
+
+      <div class="cta-band">
+        <p>区分を「生活系」と「事業系」に切り替えて、地図の色がどう変わるか見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=pref&amp;year=R6&amp;metric=per_capita_household_g&amp;category=household">ダッシュボードで確認する →</a>
+      </div>
+
+    </article>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/articles/">読み物一覧</a> ・ <a href="/terms">利用規約</a> ・
+          <a href="/privacy">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

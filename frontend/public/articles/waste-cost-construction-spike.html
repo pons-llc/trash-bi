@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>ごみ処理原価「全国1位」の6割は建設費だった——奈良・沖縄・島根の跳ね上がりを分解する | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="令和6年度のごみ処理原価は奈良県が164,618円で全国1位。しかしその58.9%は清掃工場の建設改良費で、運営費だけで見ると全国平均並みのペースでしか上がっていません。沖縄県・長崎県・島根県の急騰も同じ構造で説明できます。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/waste-cost-construction-spike" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="ごみ処理原価「全国1位」の6割は建設費だった——奈良・沖縄・島根の跳ね上がりを分解する" />
+    <meta property="og:description" content="ごみ処理原価の全国1位・奈良県164,618円のうち58.9%は施設の建設費。処理原価ランキングが何を測っているのかを内訳から検証する。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/waste-cost-construction-spike" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ponsllc" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ごみ処理原価「全国1位」の6割は建設費だった——奈良・沖縄・島根の跳ね上がりを分解する",
+        "description": "ごみ処理事業経費を建設改良費と運営費に分解し、都道府県別処理原価ランキングの変動が施設整備の時期に左右されていることを検証する。",
+        "datePublished": "2026-09-17",
+        "dateModified": "2026-09-17",
+        "author": { "@type": "Organization", "name": "pons-llc" },
+        "publisher": { "@type": "Organization", "name": "pons-llc" },
+        "image": "https://trash-bi.pons-llc.com/ogp.png",
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/waste-cost-construction-spike"
+      }
+    </script>
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
+        --color-accent-orange: #c74700;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--color-primary);
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--color-text-muted);
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 25px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 40px 0 14px;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 10px;
+      }
+      p {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      p strong {
+        color: var(--color-text);
+      }
+      .lead {
+        font-size: 16px;
+        color: var(--color-text);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .stat-box {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+      .stat-box .num.muted {
+        color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
+      }
+      .stat-box .label {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+      caption {
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 6px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 6px;
+        text-align: right;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .callout {
+        background: var(--color-primary-surface);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--color-text);
+      }
+      .callout strong {
+        color: var(--color-primary);
+      }
+      .caveat {
+        border: 1px dashed var(--color-border);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 24px 0;
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .cta-band {
+        background: var(--color-bg);
+        border-radius: 12px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 48px 0 0;
+      }
+      .cta-band p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .cta-band .cta-btn {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 28px;
+      }
+
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 32px;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        color: var(--color-text-muted);
+        text-decoration: underline;
+      }
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <article>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 処理原価に含まれる建設費</p>
+      <span class="kicker">データ深掘り</span>
+      <h1>ごみ処理原価「全国1位」の6割は建設費だった<br />奈良・沖縄・島根の跳ね上がりを分解する</h1>
+      <p class="meta">公開日：2026年9月17日／出典：環境省 一般廃棄物処理事業実態調査 廃棄物処理事業経費（令和元〜6年度）</p>
+
+      <div class="share-widget">
+        <span class="share-label">シェア</span>
+        <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+        <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+        <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+      <script>
+        ;(function () {
+          var shareText = 'ごみ処理原価の全国1位は奈良県の164,618円。でも内訳を分解したら58.9%が清掃工場の建設費で、運営費だけなら全国平均並みの伸びでした'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/waste-cost-construction-spike'
+          document.getElementById('share-x').href =
+            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+          document.getElementById('share-line').href =
+            'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+          document.getElementById('share-copy').addEventListener('click', function () {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              var btn = document.getElementById('share-copy')
+              btn.textContent = 'コピーしました'
+              setTimeout(function () {
+                btn.textContent = 'リンクをコピー'
+              }, 2000)
+            })
+          })
+        })()
+      </script>
+
+      <p class="lead"><a href="/app/?level=pref&amp;code=29&amp;year=R6&amp;metric=cost_per_ton_yen">日本ごみ処理ダッシュボード</a>で令和6年度のごみ処理原価（1トンあたりの処理事業費）を見ると、奈良県が<strong>164,618円</strong>で全国1位。2位の沖縄県97,302円に7万円近い差をつけた、極端な数字です。ところが奈良県の令和元年度は54,137円で、当時は全国のほぼ平均並みでした。6年で3倍——この間に奈良県のごみ処理が3倍非効率になったのでしょうか。原価の中身を分解すると、まったく別のものが見えてきます。</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num muted">164,618円</div>
+          <div class="label">奈良県のごみ処理原価（令和6年度・全国1位）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num muted">58.9%</div>
+          <div class="label">そのうち施設の建設改良費が占める割合</div>
+        </div>
+        <div class="stat-box">
+          <div class="num green">62,958円</div>
+          <div class="label">建設費を除いた運営コスト（全国2位）</div>
+        </div>
+      </div>
+
+      <h2>処理原価には、施設の建設費が含まれている</h2>
+      <p>
+        環境省の実態調査でいう「ごみ処理事業経費」は、次の3つの合計です。
+      </p>
+      <p>
+        <strong>建設改良費</strong>（焼却施設・最終処分場などの工事費と調査費）、<strong>処理及び維持管理費</strong>
+        （人件費・収集運搬費・中間処理費・最終処分費・委託費など、日々の運営にかかる費用）、そして<strong>その他</strong>。
+        本サイトの処理原価は、この合計をその年度の処理量で割った値です。
+      </p>
+      <p>
+        ここに落とし穴があります。清掃工場の建て替えは数百億円規模の事業で、しかも工事が集中した数年間に
+        費用が計上されます。運営がまったく同じでも、<strong>建て替えをしている年の原価だけが跳ね上がる</strong>のです。
+      </p>
+
+      <h2>奈良県の原価を分解する</h2>
+      <p>
+        令和元年度から6年度まで、奈良県の処理原価を建設改良費と運営費に分けてみます。
+      </p>
+
+      <table>
+        <caption>奈良県のごみ処理原価の内訳（1トンあたり、円）</caption>
+        <thead>
+          <tr><th>年度</th><th>処理原価</th><th>うち建設改良費</th><th>うち運営費</th><th>建設費の割合</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>令和元年度</td><td>54,137</td><td>1,844</td><td>49,537</td><td>3.4%</td></tr>
+          <tr><td>令和2年度</td><td>61,648</td><td>6,228</td><td>51,330</td><td>10.1%</td></tr>
+          <tr><td>令和3年度</td><td>65,070</td><td>8,580</td><td>53,342</td><td>13.2%</td></tr>
+          <tr><td>令和4年度</td><td>79,042</td><td>20,771</td><td>54,293</td><td>26.3%</td></tr>
+          <tr><td>令和5年度</td><td>109,830</td><td>45,116</td><td>60,617</td><td>41.1%</td></tr>
+          <tr><td>令和6年度</td><td>164,618</td><td>97,036</td><td>62,958</td><td>58.9%</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        6年間で原価は110,481円増えましたが、そのうち<strong>95,191円（86%）が建設改良費の増加</strong>です。
+        運営費は49,537円→62,958円の増加にとどまります。この13,421円（+27.1%）という伸びも決して小さくはありませんが、
+        同じ期間に全国平均の原価が51,009円→66,436円（+30.2%）と上がっていることを考えれば、
+        <strong>奈良県の運営コストは全国並みのペースでしか上がっていない</strong>ことになります。
+      </p>
+
+      <div class="callout">
+        <strong>「全国一処理が高い県」ではない</strong>
+        ：奈良県の令和6年度の原価164,618円のうち、約半分は将来何十年も使う施設への投資です。
+        これを1年分の処理量で割って他県と比べるのは、住宅ローンを組んだ年の家計支出を
+        賃貸暮らしの人と比べるようなものです。
+      </div>
+
+      <h2>沖縄県・長崎県でも同じことが起きている</h2>
+      <p>
+        令和6年度に原価が跳ねた県を見ると、同じ構造が繰り返されています。
+      </p>
+
+      <table>
+        <caption>令和6年度 処理原価上位県の内訳（1トンあたり、円）</caption>
+        <thead>
+          <tr><th>都道府県</th><th>処理原価</th><th>うち建設改良費</th><th>うち運営費</th><th>建設費の割合</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>奈良県</td><td>164,618</td><td>97,036</td><td>62,958</td><td>58.9%</td></tr>
+          <tr><td>沖縄県</td><td>97,302</td><td>46,685</td><td>41,254</td><td>48.1%</td></tr>
+          <tr><td>長崎県</td><td>87,756</td><td>19,496</td><td>52,141</td><td>22.2%</td></tr>
+          <tr><td>北海道</td><td>85,621</td><td>29,557</td><td>50,947</td><td>34.5%</td></tr>
+          <tr><td>福井県</td><td>84,967</td><td>36,802</td><td>45,429</td><td>43.3%</td></tr>
+          <tr><td>東京都</td><td>82,726</td><td>14,205</td><td>62,456</td><td>17.2%</td></tr>
+          <tr><td>福岡県</td><td>77,825</td><td>13,047</td><td>61,073</td><td>16.8%</td></tr>
+          <tr><td>徳島県</td><td>77,397</td><td>4,974</td><td>68,245</td><td>6.4%</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        沖縄県は令和5年度の57,531円から6年度の97,302円へ1年で69%の急騰を見せましたが、
+        建設改良費が13,189円→46,785円と3.5倍になったことがほぼすべてを説明します。
+        運営費は39,091円→41,254円と5.5%の増加にとどまりました。
+      </p>
+      <p>
+        長崎県はやや事情が異なります。令和6年度の原価87,756円のうち建設改良費は19,496円（22.2%）で、
+        奈良・沖縄ほど建設費に偏ってはいません。むしろ注目すべきは、長崎県が令和元年度にすでに
+        72,283円と高かったことです。当時の内訳を見ると建設改良費が28,726円（39.7%）——
+        <strong>この県は6年間の最初と最後の両方で建設期に当たっていた</strong>のです。
+        その間の令和4年度は原価57,662円（建設費割合7.5%）まで下がっています。
+      </p>
+
+      <h2>島根県を見ると、この指標の不安定さがよく分かる</h2>
+      <p>
+        最も分かりやすい例が島根県です。
+      </p>
+
+      <table>
+        <caption>島根県のごみ処理原価の内訳（1トンあたり、円）</caption>
+        <thead>
+          <tr><th>年度</th><th>処理原価</th><th>うち建設改良費</th><th>うち運営費</th><th>建設費の割合</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>令和元年度</td><td>64,565</td><td>19,179</td><td>41,615</td><td>29.7%</td></tr>
+          <tr><td>令和2年度</td><td>91,392</td><td>42,248</td><td>44,702</td><td>46.2%</td></tr>
+          <tr><td>令和3年度</td><td>135,481</td><td>73,188</td><td>41,996</td><td>54.0%</td></tr>
+          <tr><td>令和4年度</td><td>66,890</td><td>21,301</td><td>41,415</td><td>31.8%</td></tr>
+          <tr><td>令和5年度</td><td>57,668</td><td>6,952</td><td>45,193</td><td>12.1%</td></tr>
+          <tr><td>令和6年度</td><td>75,766</td><td>21,287</td><td>50,159</td><td>28.1%</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        令和3年度の島根県は135,481円。この年であれば文句なしの全国1位です。ところが2年後の令和5年度には
+        57,668円まで落ち、全国平均（60,812円）を下回ります。この間、運営費は41,996円→45,193円とほとんど動いていません。
+        <strong>順位が入れ替わったのは、工事が終わったからです。</strong>
+      </p>
+      <p>
+        つまり処理原価の単年度ランキングは、その県のごみ処理が効率的かどうかではなく、
+        <strong>その年にたまたま清掃工場を建てていたかどうか</strong>を、かなりの割合で映しています。
+      </p>
+
+      <h2>建設費を除くと、ランキングの顔ぶれが変わる</h2>
+      <p>
+        では建設改良費を除いた運営費だけで並べるとどうなるか。令和6年度の上位は
+        徳島県68,245円・奈良県62,958円・東京都62,456円・福岡県61,073円・和歌山県53,428円。
+        少ないほうは群馬県36,213円・富山県37,031円・石川県38,197円・茨城県38,405円・宮城県38,990円です。
+      </p>
+      <p>
+        沖縄県は41,254円で、合計では全国2位だったのが運営費では中位以下に下がります。
+        逆に東京都や福岡県のように、建設費の割合が小さいまま上位に入る県は、
+        日々の運営そのものにコストがかかっていると読めます——
+        これは<a href="/articles/waste-cost-per-ton-nara-tokyo">以前の記事</a>で扱った、
+        施設の規模と集約度の話につながっていきます。
+      </p>
+
+      <div class="callout">
+        <strong>読み方のコツ</strong>
+        ：ダッシュボードで処理原価を見るときは、年度を切り替えて推移を確認してください。
+        ある年だけ跳ね上がっている県は、ほぼ間違いなく施設の建設期です。
+        年度を「全期間」にすると6年分がならされるので、単年度より実態に近い比較ができます。
+      </div>
+
+      <h2>建設ラッシュそのものは全国的な現象</h2>
+      <p>
+        なお、全国の処理事業費に占める建設改良費の割合は、令和元年度21.8%から令和6年度23.2%とほぼ横ばいです。
+        令和6年度に建設費が原価の30%を超えた県は12。全国の焼却施設の多くが1990年代から2000年代前半に
+        建てられたことを考えれば、更新期が重なるのは自然なことで、今後も同じ理由で原価が跳ねる県は
+        入れ替わりながら現れると考えられます。
+      </p>
+      <p>
+        全国平均の処理原価が6年間で51,009円から66,436円へ30%上昇したのは、建設費の割合が増えたからではなく、
+        人件費・委託費・燃料費といった運営コスト側の上昇が主因です。
+      </p>
+
+      <div class="caveat">
+        本記事の内訳は、環境省「一般廃棄物処理事業実態調査」の廃棄物処理事業経費（歳出）から、
+        ごみ処理分の「建設改良費（工事費＋調査費、組合分担金を除く）」「処理及び維持管理費」「その他」を
+        都道府県単位で集計し、各年度の処理量で割ったものです。3区分の合計は本サイトの処理原価と一致します。
+        建設改良費の増減の背景にある個別の施設整備事業については、本データからは特定できません。
+        また経費データは都道府県単位のみの公表で、市区町村別の内訳は含まれていません。
+      </div>
+
+      <h2>単年度の1位には、たいてい理由がある</h2>
+      <p>
+        「全国で最もごみ処理費が高い県」という見出しは目を引きますが、その中身の6割が
+        将来のための施設投資だとしたら、意味はずいぶん変わってきます。ランキングの数字を見たときに
+        「これは何の合計なのか」を一度確かめる——それだけで、読み違いはかなり減らせます。
+      </p>
+
+      <div class="cta-band">
+        <p>年度を切り替えながら、処理原価がどの県でいつ跳ねているか見てみましょう。</p>
+        <a class="cta-btn" href="/app/?level=pref&amp;code=29&amp;year=R6&amp;metric=cost_per_ton_yen">ダッシュボードで確認する →</a>
+      </div>
+
+    </article>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/articles/">読み物一覧</a> ・ <a href="/terms">利用規約</a> ・
+          <a href="/privacy">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

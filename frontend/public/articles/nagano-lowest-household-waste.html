@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H2N2SDSLF2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-H2N2SDSLF2')
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県 | 日本ごみ処理ダッシュボード</title>
+    <meta name="description" content="令和6年度の生活系ごみ1人1日排出量で、長野県は499gと全国4番目の少なさ。大都市を抱えない地方県では唯一です。全国1,719市区町村の下位50のうち24団体が長野県で、その低さは飯田市・下伊那郡に強く集中していました。" />
+    <link rel="canonical" href="https://trash-bi.pons-llc.com/articles/nagano-lowest-household-waste" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="日本ごみ処理ダッシュボード" />
+    <meta property="og:title" content="長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県" />
+    <meta property="og:description" content="全国の排出量下位50市区町村のうち24が長野県。人口密度でも自家処理でも説明できない低さを、県内の地域分布から読み解く。" />
+    <meta property="og:url" content="https://trash-bi.pons-llc.com/articles/nagano-lowest-household-waste" />
+    <meta property="og:image" content="https://trash-bi.pons-llc.com/ogp.png" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ponsllc" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "長野県はなぜごみが少ないのか——全国の下位50市区町村の半分を占める県",
+        "description": "長野県の1人1日あたりごみ排出量が全国で突出して少ない理由を、市町村別の分布・南信州地域への集中・6年間の推移から検証する。",
+        "datePublished": "2026-09-17",
+        "dateModified": "2026-09-17",
+        "author": { "@type": "Organization", "name": "pons-llc" },
+        "publisher": { "@type": "Organization", "name": "pons-llc" },
+        "image": "https://trash-bi.pons-llc.com/ogp.png",
+        "mainEntityOfPage": "https://trash-bi.pons-llc.com/articles/nagano-lowest-household-waste"
+      }
+    </script>
+
+    <style>
+      :root {
+        --color-primary: #0017c1;
+        --color-primary-surface: #e8f1fe;
+        --color-text: #1a1a1a;
+        --color-text-sub: #4d4d4d;
+        --color-text-muted: #767676;
+        --color-border: #e6e6e6;
+        --color-bg: #f7f8fa;
+        --color-accent-green: #197a4b;
+        --color-accent-orange: #c74700;
+        --font-sans: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: #fff;
+        line-height: 1.85;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--color-primary);
+      }
+      header.site-header {
+        background: var(--color-primary);
+        color: #fff;
+      }
+      .site-header .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+      }
+      .site-header .logo {
+        font-weight: 700;
+        font-size: 14px;
+        text-decoration: none;
+        color: #fff;
+      }
+      .cta-btn {
+        display: inline-block;
+        background: #fff;
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 13px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      article {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 40px 20px 80px;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--color-text-muted);
+      }
+      .kicker {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--color-primary);
+        background: var(--color-primary-surface);
+        border-radius: 999px;
+        padding: 4px 14px;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-size: 25px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+      }
+      .meta {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-bottom: 32px;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 40px 0 14px;
+        border-left: 4px solid var(--color-primary);
+        padding-left: 10px;
+      }
+      p {
+        font-size: 15px;
+        color: var(--color-text-sub);
+        margin: 0 0 18px;
+      }
+      p strong {
+        color: var(--color-text);
+      }
+      .lead {
+        font-size: 16px;
+        color: var(--color-text);
+      }
+
+      .stat-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 24px 0;
+      }
+      .stat-box {
+        background: var(--color-bg);
+        border: 1px solid var(--color-border);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+      .stat-box .num {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--color-primary);
+      }
+      .stat-box .num.muted {
+        color: var(--color-accent-orange);
+      }
+      .stat-box .num.green {
+        color: var(--color-accent-green);
+      }
+      .stat-box .label {
+        font-size: 11.5px;
+        color: var(--color-text-muted);
+        margin-top: 4px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 13.5px;
+      }
+      caption {
+        text-align: left;
+        font-size: 12px;
+        color: var(--color-text-muted);
+        margin-bottom: 6px;
+      }
+      th,
+      td {
+        border-bottom: 1px solid var(--color-border);
+        padding: 8px 6px;
+        text-align: right;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 12px;
+      }
+
+      .callout {
+        background: var(--color-primary-surface);
+        border-radius: 10px;
+        padding: 18px 20px;
+        margin: 24px 0;
+        font-size: 14px;
+        color: var(--color-text);
+      }
+      .callout strong {
+        color: var(--color-primary);
+      }
+      .caveat {
+        border: 1px dashed var(--color-border);
+        border-radius: 10px;
+        padding: 16px 18px;
+        margin: 24px 0;
+        font-size: 13px;
+        color: var(--color-text-muted);
+      }
+
+      .cta-band {
+        background: var(--color-bg);
+        border-radius: 12px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 48px 0 0;
+      }
+      .cta-band p {
+        font-size: 13.5px;
+        margin-bottom: 16px;
+      }
+      .cta-band .cta-btn {
+        background: var(--color-primary);
+        color: #fff;
+        font-size: 14px;
+        padding: 11px 28px;
+      }
+
+      .share-widget {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 4px 0 32px;
+      }
+      .share-widget .share-label {
+        font-size: 12.5px;
+        color: var(--color-text-muted);
+        margin-right: 2px;
+      }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        font-family: inherit;
+        font-size: 12.5px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 999px;
+        border: 1px solid var(--color-border);
+        background: #fff;
+        color: var(--color-text-sub);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .share-btn:hover {
+        border-color: var(--color-primary);
+        color: var(--color-primary);
+      }
+      .share-btn.share-x {
+        font-weight: 700;
+      }
+      .share-btn.share-line {
+        color: #06c755;
+        border-color: #06c75533;
+      }
+      .share-btn.share-line:hover {
+        border-color: #06c755;
+        color: #06c755;
+      }
+
+      footer.site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 24px 0;
+      }
+      footer.site-footer .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--color-text-muted);
+      }
+      footer.site-footer a {
+        color: var(--color-text-muted);
+        text-decoration: underline;
+      }
+</style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">日本ごみ処理ダッシュボード</a>
+        <a class="cta-btn" href="/app/">ダッシュボードを開く</a>
+      </div>
+    </header>
+
+    <article>
+      <p class="breadcrumb"><a href="/">トップ</a> ／ <a href="/articles/">読み物</a> ／ 長野県のごみが少ない理由</p>
+      <span class="kicker">データ深掘り</span>
+      <h1>長野県はなぜごみが少ないのか<br />全国の下位50市区町村の半分を占める県</h1>
+      <p class="meta">公開日：2026年9月17日／出典：環境省 一般廃棄物処理事業実態調査（令和元〜6年度）</p>
+
+      <div class="share-widget">
+        <span class="share-label">シェア</span>
+        <a id="share-x" class="share-btn share-x" target="_blank" rel="noopener noreferrer">X</a>
+        <a id="share-line" class="share-btn share-line" target="_blank" rel="noopener noreferrer">LINE</a>
+        <button type="button" id="share-copy" class="share-btn share-copy">リンクをコピー</button>
+      </div>
+      <script>
+        ;(function () {
+          var shareText = '全国1,719市区町村をごみ排出量の少ない順に並べると、下位50のうち24が長野県。しかも飯田市・下伊那郡に極端に集中していました'
+          var shareUrl = 'https://trash-bi.pons-llc.com/articles/nagano-lowest-household-waste'
+          document.getElementById('share-x').href =
+            'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl)
+          document.getElementById('share-line').href =
+            'https://line.me/R/msg/text/?' + encodeURIComponent(shareText + '\n' + shareUrl)
+          document.getElementById('share-copy').addEventListener('click', function () {
+            navigator.clipboard.writeText(shareUrl).then(function () {
+              var btn = document.getElementById('share-copy')
+              btn.textContent = 'コピーしました'
+              setTimeout(function () {
+                btn.textContent = 'リンクをコピー'
+              }, 2000)
+            })
+          })
+        })()
+      </script>
+
+      <p class="lead"><a href="/app/?level=pref&amp;code=20&amp;year=R6&amp;metric=per_capita_household_g&amp;category=household">日本ごみ処理ダッシュボード</a>で令和6年度の生活系（家庭から出る）ごみの1人1日排出量を都道府県別に並べると、長野県は<strong>499g</strong>で全国4番目に少ない水準です。上位3つは京都府・大阪府・広島県——いずれも大都市を抱える府県で、<a href="/articles/urban-rural-waste-per-capita">別の記事</a>で見たとおり大都市圏ほど生活系が少ないのは全国的な傾向です。その中で、長野県だけが人口密度の低い地方県として顔を出しています。しかも市町村単位まで下ろすと、この低さは県内の特定の地域に驚くほど集中していました。</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="num green">499g</div>
+          <div class="label">長野県の生活系1人1日排出量（全国4位の少なさ）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num">552g</div>
+          <div class="label">全国平均の生活系排出量（令和6年度）</div>
+        </div>
+        <div class="stat-box">
+          <div class="num green">24／50</div>
+          <div class="label">全国の排出量下位50市区町村のうち長野県が占める数</div>
+        </div>
+      </div>
+
+      <h2>全国の「少ない側」の半分を、長野県の市町村が占めている</h2>
+      <p>
+        全国1,719市区町村を1人1日排出量（合計）の少ない順に並べたとき、下位50のうち<strong>24団体が長野県</strong>です。
+        下位100まで広げても27団体を占めます。長野県の市町村数は77で全国の4.5%にすぎませんから、
+        下位50の48%を占めるというのは偶然では説明しづらい偏りです。
+      </p>
+      <p>
+        小規模な村は数字が振れやすいので、人口1万人以上に限って見ても傾向は変わりません。
+        この条件での全国1,176団体の下位50のうち、長野県は12団体で最多でした（2位は東京都の9団体）。
+      </p>
+
+      <table>
+        <caption>長野県内 1人1日排出量の少ない市町村（人口1万人以上、令和6年度）</caption>
+        <thead>
+          <tr><th>市町村</th><th>人口</th><th>合計</th><th>生活系</th><th>事業系</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>高森町</td><td>12,623人</td><td>451g</td><td>451g</td><td>0g</td></tr>
+          <tr><td>御代田町</td><td>16,816人</td><td>494g</td><td>346g</td><td>147g</td></tr>
+          <tr><td>南箕輪村</td><td>16,078人</td><td>502g</td><td>388g</td><td>114g</td></tr>
+          <tr><td>箕輪町</td><td>24,265人</td><td>513g</td><td>403g</td><td>110g</td></tr>
+          <tr><td>松川町</td><td>12,485人</td><td>519g</td><td>519g</td><td>0g</td></tr>
+          <tr><td>東御市</td><td>29,052人</td><td>531g</td><td>456g</td><td>75g</td></tr>
+          <tr><td>佐久穂町</td><td>10,140人</td><td>531g</td><td>491g</td><td>41g</td></tr>
+          <tr><td>辰野町</td><td>18,078人</td><td>559g</td><td>479g</td><td>79g</td></tr>
+        </tbody>
+      </table>
+
+      <h2>特に集中しているのは、飯田市と下伊那郡</h2>
+      <p>
+        県内の分布をさらに細かく見ると、低い値が県南部の<strong>飯田市・下伊那郡</strong>（南信州地域）に固まっています。
+        この地域の29市町村を人口加重で平均すると、合計706g・生活系522g。下伊那郡の28町村だけに絞ると
+        合計694g・生活系504gで、全国平均（839g／552g）を大きく下回ります。
+      </p>
+
+      <table>
+        <caption>飯田市・下伊那郡の1人1日排出量（令和6年度、少ない順の抜粋）</caption>
+        <thead>
+          <tr><th>市町村</th><th>人口</th><th>合計</th><th>生活系</th><th>事業系</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>泰阜村</td><td>1,422人</td><td>439g</td><td>439g</td><td>0g</td></tr>
+          <tr><td>高森町</td><td>12,623人</td><td>451g</td><td>451g</td><td>0g</td></tr>
+          <tr><td>平谷村</td><td>380人</td><td>454g</td><td>454g</td><td>0g</td></tr>
+          <tr><td>下條村</td><td>3,429人</td><td>462g</td><td>462g</td><td>0g</td></tr>
+          <tr><td>豊丘村</td><td>6,503人</td><td>465g</td><td>408g</td><td>57g</td></tr>
+          <tr><td>喬木村</td><td>5,914人</td><td>471g</td><td>404g</td><td>66g</td></tr>
+          <tr><td>大鹿村</td><td>875人</td><td>476g</td><td>476g</td><td>0g</td></tr>
+          <tr><td>松川町</td><td>12,485人</td><td>519g</td><td>519g</td><td>0g</td></tr>
+          <tr><td>飯田市</td><td>95,076人</td><td>723g</td><td>547g</td><td>176g</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>地域でまとまっている、という点が重要</strong>
+        ：隣り合う市町村が揃って同じ方向に振れているとき、その原因は個々の自治体の事情より、
+        地域で共有された収集・分別の仕組みにあることが多くなります。本サイトでは
+        <a href="/articles/fukuoka-recycling-rate-gap-cluster">福岡県の3町</a>や
+        <a href="/articles/shiga-inukami-recycling-collapse">滋賀県犬上郡</a>でも同じ形の集中を扱いました。
+        南信州のケースも、29の自治体が別々に努力した結果というより、地域ぐるみの仕組みが働いていると見るのが自然です。
+      </div>
+
+      <h2>ただし「長野県ならどこでも少ない」わけではない</h2>
+      <p>
+        ここは正確に見ておく必要があります。長野県内には、全国有数の<strong>多い</strong>自治体も同居しています。
+        軽井沢町は1人1日1,592gで、全国の市町村でも上位5位に入る水準です。木島平村1,651g、白馬村1,335g、
+        山ノ内町1,222g、野沢温泉村1,143g——いずれもスキー場や温泉を抱える観光地で、
+        <a href="/articles/hakone-waste-per-capita">箱根町の記事</a>で扱ったのと同じ「住民数に対して来訪者が多すぎる」構図です。
+      </p>
+      <p>
+        県庁所在地の長野市は846g、松本市に至っては935gで全国平均を上回ります。
+        つまり長野県の低さは県全体が均一に低いからではなく、<strong>観光地と一部の都市が押し上げている分を、
+        南信州をはじめとする多数の市町村の低さが上回っている</strong>という構図です。
+      </p>
+
+      <h2>6年間の推移で見ると、長野県は「昔から低い」</h2>
+      <p>
+        令和元年度から6年度の推移を見ると、長野県の生活系排出量は533g→499gで6.3%の減少。
+        同じ期間の全国平均は599g→552gで7.9%の減少です。減り方だけを見れば、長野県は全国平均よりむしろ緩やか。
+      </p>
+
+      <table>
+        <caption>長野県と全国平均の推移（1人1日あたり、生活系）</caption>
+        <thead>
+          <tr><th>年度</th><th>長野県</th><th>全国平均</th><th>差</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>令和元年度</td><td>533g</td><td>599g</td><td>-66g</td></tr>
+          <tr><td>令和2年度</td><td>547g</td><td>613g</td><td>-67g</td></tr>
+          <tr><td>令和3年度</td><td>533g</td><td>601g</td><td>-68g</td></tr>
+          <tr><td>令和4年度</td><td>528g</td><td>587g</td><td>-58g</td></tr>
+          <tr><td>令和5年度</td><td>504g</td><td>563g</td><td>-60g</td></tr>
+          <tr><td>令和6年度</td><td>499g</td><td>552g</td><td>-52g</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        令和元年度の時点ですでに全国3番目に少なく、6年間その位置をほぼ保っています。
+        この6年で何かが起きたというより、<strong>それ以前から続いている状態が維持されている</strong>と読むのが
+        自然でしょう。むしろ全国平均のほうが速く下がっているため、長野県のリードはわずかに縮んでいます。
+      </p>
+
+      <h2>地理や産業では説明しにくい</h2>
+      <p>
+        長野県が低い理由を、条件面から説明できるか考えてみます。
+      </p>
+      <p>
+        <strong>都市の密度</strong>では説明できません。大都市圏ほど生活系が少ないのは全国的な傾向ですが、
+        長野県はその逆側——人口密度の低い内陸県です。同じような条件の山梨県は635g、群馬県は672gで、
+        長野県より130〜170g多い。隣接県と比べても長野県だけが外れています。
+      </p>
+      <p>
+        <strong>自家処理</strong>でも説明できません。統計に乗らない自家処理量を1人1日に換算すると長野県は1.8g。
+        全国では多いほうですが、50g以上ある差に対しては桁が違います。
+      </p>
+      <p>
+        <strong>事業系の少なさ</strong>でもありません。長野県の事業系は256gで全国平均（282g）よりやや少ない程度。
+        低さの主因はあくまで生活系です。
+      </p>
+      <p>
+        残るのは、収集の区分や排出のルールといった、自治体側の運用にかかわる要因です。
+        本サイトのデータからはその中身までは分かりませんが、
+        <strong>条件で説明できる部分を取り除いたあとに残る差</strong>として、
+        長野県のケースは他県が参照する価値のある事例だと言えます。
+      </p>
+
+      <div class="caveat">
+        本記事の数値はすべて環境省「一般廃棄物処理事業実態調査」の公表値にもとづく集計です。
+        地域別の集計は、人口が判明し当該指標が公表されている市町村を人口で加重平均したものです。
+        なお生活系・事業系の内訳は市町村によって計上方法が異なる場合があり、事業系が0gと公表されている
+        市町村は「事業所のごみが発生していない」のではなく、生活系と分けて計上していないケースを含みます。
+        低さの要因として挙げた収集・分別運用については、本データから特定・立証したものではありません。
+      </div>
+
+      <h2>ランキングの下位も読む価値がある</h2>
+      <p>
+        ごみのランキングは上位（多い側）ばかりが話題になりますが、下位に特定の地域が固まっているときは、
+        そこに再現可能な仕組みがある可能性があります。長野県、とりわけ南信州のケースはその典型です。
+      </p>
+
+      <div class="cta-band">
+        <p>長野県内の市町村をランキングと地図で比べて、どこが低くどこが高いか確かめてみましょう。</p>
+        <a class="cta-btn" href="/app/?level=city&amp;code=20205&amp;year=R6&amp;metric=per_capita_total_g">ダッシュボードで確認する →</a>
+      </div>
+
+    </article>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© 2026 pons-llc</span>
+        <div>
+          <a href="/articles/">読み物一覧</a> ・ <a href="/terms">利用規約</a> ・
+          <a href="/privacy">プライバシーポリシー</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
